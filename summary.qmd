@@ -191,7 +191,7 @@
 <!-- Q7 -->
 <div class="question">
 
-<p><strong>Q7.</strong> At the peak of operational pressure, the City of Austin Animal Shelter undertook a comprehensive review of its historical intake and outcome records. The goal was to better understand how early intake conditions might relate to eventual adoption outcomes.</p>
+<p><strong>Q7.</strong> At the peak of operational pressure, the City of Austin Animal Shelter undertook a comprehensive review of its historical intake and outcome records.</p>
 
 <p>For each animal, two binary variables were recorded: stray and adopted.</p>
 
@@ -221,27 +221,86 @@ xtabs(~ stray + adopted, data = shelter) %>%
 </div>
 
 <!-- =========================
-     ENGINE (NO CONTENT CHANGES)
+     ENGINE (FIXED FINAL)
      ========================= -->
-<button id="prev">Previous</button>
-<button id="next">Next</button>
-<button id="submit">Submit</button>
-<button id="reset">Reset</button>
+
+<style>
+#quiz {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+}
+
+/* spacing + safety */
+.question {
+  padding: 18px;
+  border-bottom: 1px solid #e6e6e6;
+  display: none;
+}
+
+/* clean radio stacking */
+.question label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+/* number header */
+.quiz-meta {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+select {
+  margin: 4px;
+}
+
+#controls {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+</style>
+
+<div class="quiz-meta" id="quizMeta"></div>
+
+<div id="controls">
+  <button id="prev">Previous</button>
+  <button id="next">Next</button>
+  <button id="submit">Submit</button>
+  <button id="reset">Reset</button>
+</div>
 
 <div id="result"></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const questions = Array.from(document.querySelectorAll("#quiz .question"));
+  const quiz = document.querySelector("#quiz");
 
-  let current = 0;
+  let questions = Array.from(document.querySelectorAll("#quiz .question"));
 
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
   const submit = document.getElementById("submit");
   const reset = document.getElementById("reset");
   const result = document.getElementById("result");
+  const meta = document.getElementById("quizMeta");
+
+  let current = 0;
+
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  function updateMeta() {
+    meta.textContent = `Question ${current + 1} of ${questions.length}`;
+  }
 
   function show(i) {
     questions.forEach((q, idx) => {
@@ -253,6 +312,45 @@ document.addEventListener("DOMContentLoaded", function () {
     prev.style.display = current === 0 ? "none" : "inline-block";
     next.style.display = current === questions.length - 1 ? "none" : "inline-block";
     submit.style.display = current === questions.length - 1 ? "inline-block" : "none";
+
+    updateMeta();
+  }
+
+  function randomize() {
+
+    // shuffle questions
+    shuffle(questions);
+    questions.forEach(q => quiz.appendChild(q));
+
+    // shuffle selects
+    questions.forEach(q => {
+      q.querySelectorAll("select").forEach(sel => {
+        const first = sel.options[0];
+        const rest = Array.from(sel.options).slice(1);
+        shuffle(rest);
+
+        sel.innerHTML = "";
+        sel.appendChild(first);
+        rest.forEach(o => sel.appendChild(o));
+      });
+    });
+
+    // shuffle radio labels safely
+    questions.forEach(q => {
+      const groups = {};
+
+      q.querySelectorAll("input[type=radio]").forEach(r => {
+        const name = r.name;
+        if (!groups[name]) groups[name] = [];
+        groups[name].push(r.closest("label"));
+      });
+
+      Object.values(groups).forEach(group => {
+        shuffle(group);
+        const parent = group[0].parentElement;
+        group.forEach(el => parent.appendChild(el));
+      });
+    });
   }
 
   function grade() {
@@ -270,35 +368,27 @@ document.addEventListener("DOMContentLoaded", function () {
         const weight = 1 / selects.length;
 
         selects.forEach(sel => {
-          if (sel.value === sel.dataset.answer) {
-            score += weight;
-          }
+          if (sel.value === sel.dataset.answer) score += weight;
         });
-      }
 
-      else {
+      } else {
         const checked = q.querySelector("input[type=radio]:checked");
-        if (checked && checked.dataset.answer === "true") {
-          score = 1;
-        }
+        if (checked && checked.dataset.answer === "true") score = 1;
       }
 
       total += score;
     });
 
     result.textContent =
-      "Score: " + total.toFixed(2) + " / " + questions.length +
-      " = " + ((total / questions.length) * 100).toFixed(1) + "%";
+      `Score: ${total.toFixed(2)} / ${questions.length} = ${(total / questions.length * 100).toFixed(1)}%`;
   }
 
   next.onclick = () => show(current + 1);
   prev.onclick = () => show(current - 1);
   submit.onclick = grade;
+  reset.onclick = () => location.reload();
 
-  reset.onclick = () => {
-    location.reload();
-  };
-
+  randomize();
   show(0);
 
 });
