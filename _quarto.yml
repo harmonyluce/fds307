@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "YOUR TITLE"
-  author: "YOUR NAME"
+  title: "Foundations of Data Science"
+  author: "Harmony Luce"
   date: today
   repo-url: https://github.com/[YOURACCOUNT]/[YOURREPO]
   repo-branch: main
