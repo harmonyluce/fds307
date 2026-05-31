@@ -19,6 +19,9 @@ format:
   html:
     theme: [default, styles/edav3.scss]
     highlight-style: styles/joyce.theme
+    css: styles/styles.css
+    include-after-body:
+      - scripts/quiz.js
     callout-icon: false
     
 bibliography: references.bib    
