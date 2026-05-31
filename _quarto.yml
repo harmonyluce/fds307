@@ -1,0 +1,41 @@
+project:
+  type: book
+
+book:
+  title: "YOUR TITLE"
+  author: "YOUR NAME"
+  date: today
+  repo-url: https://github.com/[YOURACCOUNT]/[YOURREPO]
+  repo-branch: main
+  repo-actions: [source, edit, issue]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+  
+format:
+  html:
+    theme: [default, styles/edav3.scss]
+    highlight-style: styles/joyce.theme
+    callout-icon: false
+    
+bibliography: references.bib    
+    
+knitr:
+  opts_chunk: 
+    fig.align: center
+    out.width: 70%
+    
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: true
+  cache: true
+
+editor: source
+
+
+
+
