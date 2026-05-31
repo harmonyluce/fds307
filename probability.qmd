@@ -1,0 +1,47 @@
+# Probability
+
+A probability **quantifies how likely** an event will happen. The probability of some event is a number between 0 and 1, inclusive. i.e.
+
+$$0\leq P(\textrm{event})\leq 1$$
+
+- An event with probability 1 is certain to occur.
+- An event with probability 0 is certain NOT to occur.
+- A probability can be expressed as a decimal, a fraction, or a percentage.
+
+In this chapter, you will get acquainted with the basics of probability with emphasis on learning how to estimate them using data.
+
+## Events, Rules, and Sources of Probability {.unnumbered}
+
+There are three fundamental ways of describing probability in terms of events: simple, joint, and conditional.
+
+### Careful Counting
+
+A **simple probability** is the chance that one event happens. The most common example is the probabilities we can compute from flipping a coin. Understanding the concept of **sample space** is crucial here, as it determines all possible outcomes of an experiment. In a coin flip, the sample space is {H, T}. Assuming it is a fair coin, then the probability of landing tails is 0.5 because there is one outcome of interest out of two possible outcomes.
+
+This is an application of the **counting principle**. Assuming all outcomes are equally likely to happen, then
+
+$$\textrm{probability of an event happening}=\dfrac{\#\;\textrm{of outcomes of interest}}{\textrm{total }\#\;\textrm{of outcomes}}.$$
+
+How about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a cafe?
+
+### Estimating Probabilities
+
+<!-- That's exactly a result of *careful counting* (one source of probability). But data science, on the regular, deals with handling data $-$ a lot of data! Data itself is another source of probability. -->
+
+### Conditional Probability
+
+### Negation Rule
+
+### Addition Rule
+
+### Mutually Exclusive Events
+
+### Multiplication Rule
+
+### Independent Events
+
+## Probability Models
+
+### Binomial Model
+
+### Normal Model

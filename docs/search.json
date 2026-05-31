@@ -38,5 +38,35 @@
     "crumbs": [
       "Welcome!! 🐈"
     ]
+  },
+  {
+    "objectID": "probability.html",
+    "href": "probability.html",
+    "title": "1  Probability",
+    "section": "",
+    "text": "Events, Rules, and Sources of Probability\nA probability quantifies how likely an event will happen. The probability of some event is a number between 0 and 1, inclusive. i.e.\n\\[0\\leq P(\\textrm{event})\\leq 1\\]\nIn this chapter, you will get acquainted with the basics of probability with emphasis on learning how to estimate them using data.\nThere are three fundamental ways of describing probability in terms of events: simple, joint, and conditional.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html#events-rules-and-sources-of-probability",
+    "href": "probability.html#events-rules-and-sources-of-probability",
+    "title": "1  Probability",
+    "section": "",
+    "text": "1.0.1 Careful Counting\nA simple probability is the chance that one event happens. The most common example is the probabilities we can compute from flipping a coin. Understanding the concept of sample space is crucial here, as it determines all possible outcomes of an experiment. In a coin flip, the sample space is {H, T}. Assuming it is a fair coin, then the probability of landing tails is 0.5 because there is one outcome of interest out of two possible outcomes.\nThis is an application of the counting principle. Assuming all outcomes are equally likely to happen, then\n\\[\\textrm{probability of an event happening}=\\dfrac{\\#\\;\\textrm{of outcomes of interest}}{\\textrm{total }\\#\\;\\textrm{of outcomes}}.\\]\nHow about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a cafe?\n\n\n1.0.2 Estimating Probabilities\n\n\n\n1.0.3 Conditional Probability\n\n\n1.0.4 Negation Rule\n\n\n1.0.5 Addition Rule\n\n\n1.0.6 Mutually Exclusive Events\n\n\n1.0.7 Multiplication Rule\n\n\n1.0.8 Independent Events",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability</span>"
+    ]
+  },
+  {
+    "objectID": "probability.html#probability-models",
+    "href": "probability.html#probability-models",
+    "title": "1  Probability",
+    "section": "1.1 Probability Models",
+    "text": "1.1 Probability Models\n\n1.1.1 Binomial Model\n\n\n1.1.2 Normal Model",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Probability</span>"
+    ]
   }
 ]

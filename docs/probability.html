@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harmony Luce">
-<meta name="dcterms.date" content="2026-06-01">
 
-<title>Foundations of Data Science</title>
+<title>1&nbsp; Probability – Foundations of Data Science</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./probability.html" rel="next">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome!! 🐈</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,14 +144,14 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome!! 🐈</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./probability.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,35 +176,38 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!! 🐈</a></li>
+  <li><a href="#events-rules-and-sources-of-probability" id="toc-events-rules-and-sources-of-probability" class="nav-link active" data-scroll-target="#events-rules-and-sources-of-probability">Events, Rules, and Sources of Probability</a>
+  <ul class="collapse">
+  <li><a href="#careful-counting" id="toc-careful-counting" class="nav-link" data-scroll-target="#careful-counting"><span class="header-section-number">1.0.1</span> Careful Counting</a></li>
+  <li><a href="#estimating-probabilities" id="toc-estimating-probabilities" class="nav-link" data-scroll-target="#estimating-probabilities"><span class="header-section-number">1.0.2</span> Estimating Probabilities</a></li>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">1.0.3</span> Conditional Probability</a></li>
+  <li><a href="#negation-rule" id="toc-negation-rule" class="nav-link" data-scroll-target="#negation-rule"><span class="header-section-number">1.0.4</span> Negation Rule</a></li>
+  <li><a href="#addition-rule" id="toc-addition-rule" class="nav-link" data-scroll-target="#addition-rule"><span class="header-section-number">1.0.5</span> Addition Rule</a></li>
+  <li><a href="#mutually-exclusive-events" id="toc-mutually-exclusive-events" class="nav-link" data-scroll-target="#mutually-exclusive-events"><span class="header-section-number">1.0.6</span> Mutually Exclusive Events</a></li>
+  <li><a href="#multiplication-rule" id="toc-multiplication-rule" class="nav-link" data-scroll-target="#multiplication-rule"><span class="header-section-number">1.0.7</span> Multiplication Rule</a></li>
+  <li><a href="#independent-events" id="toc-independent-events" class="nav-link" data-scroll-target="#independent-events"><span class="header-section-number">1.0.8</span> Independent Events</a></li>
+  </ul></li>
+  <li><a href="#probability-models" id="toc-probability-models" class="nav-link" data-scroll-target="#probability-models"><span class="header-section-number">1.1</span> Probability Models</a>
+  <ul class="collapse">
+  <li><a href="#binomial-model" id="toc-binomial-model" class="nav-link" data-scroll-target="#binomial-model"><span class="header-section-number">1.1.1</span> Binomial Model</a></li>
+  <li><a href="#normal-model" id="toc-normal-model" class="nav-link" data-scroll-target="#normal-model"><span class="header-section-number">1.1.2</span> Normal Model</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/probability.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/probability.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Foundations of Data Science</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Probability</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Harmony Luce </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -215,16 +217,57 @@ window.Quarto = {
 </header>
 
 
-<section id="welcome" class="level1 unnumbered">
-<h1 class="unnumbered">Welcome!! 🐈</h1>
-<p>Dear reader,</p>
-<p>This online textbook serves as your first engagement with the concepts and applications of data science. It also introduces you to R and RStudio, which will be the primary computing tool to assist you in making data-driven inferences in practice.</p>
-<p>There is little-to-no expectation of you to be excellent navigators of one webpage and one desktop application. So it is highly recommended that as you immerse through this textbook, you read it while copying and executing the code blocks presented in each chapter. Making that a habit for whichever course this reference gets used boosts the chances of the pretension of learning to escape your soul. If you find yourself less inclined to follow that recommendation, then you can just probably go back home and take over your father’s car dealership, or help your mother with grocery shopping.</p>
-<p>At any moment you struggle with the coding aspect, reach out to a colleague or to your professor or TA. The sooner you address the hurdle, the better. Your basic recipe for success includes allocating enough time for this and not devote way too much to whatever foolish activities your chapter mates are engaging in.</p>
-<p>Take it easy! 😁<br>
-<span class="math inline">\(\small\textit{Dr. H}\)</span></p>
+<p>A probability <strong>quantifies how likely</strong> an event will happen. The probability of some event is a number between 0 and 1, inclusive. i.e.</p>
+<p><span class="math display">\[0\leq P(\textrm{event})\leq 1\]</span></p>
+<ul>
+<li>An event with probability 1 is certain to occur.</li>
+<li>An event with probability 0 is certain NOT to occur.</li>
+<li>A probability can be expressed as a decimal, a fraction, or a percentage.</li>
+</ul>
+<p>In this chapter, you will get acquainted with the basics of probability with emphasis on learning how to estimate them using data.</p>
+<section id="events-rules-and-sources-of-probability" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="events-rules-and-sources-of-probability">Events, Rules, and Sources of Probability</h2>
+<p>There are three fundamental ways of describing probability in terms of events: simple, joint, and conditional.</p>
+<section id="careful-counting" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="careful-counting"><span class="header-section-number">1.0.1</span> Careful Counting</h3>
+<p>A <strong>simple probability</strong> is the chance that one event happens. The most common example is the probabilities we can compute from flipping a coin. Understanding the concept of <strong>sample space</strong> is crucial here, as it determines all possible outcomes of an experiment. In a coin flip, the sample space is {H, T}. Assuming it is a fair coin, then the probability of landing tails is 0.5 because there is one outcome of interest out of two possible outcomes.</p>
+<p>This is an application of the <strong>counting principle</strong>. Assuming all outcomes are equally likely to happen, then</p>
+<p><span class="math display">\[\textrm{probability of an event happening}=\dfrac{\#\;\textrm{of outcomes of interest}}{\textrm{total }\#\;\textrm{of outcomes}}.\]</span></p>
+<p>How about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a cafe?</p>
+</section>
+<section id="estimating-probabilities" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="estimating-probabilities"><span class="header-section-number">1.0.2</span> Estimating Probabilities</h3>
+<!-- That's exactly a result of *careful counting* (one source of probability). But data science, on the regular, deals with handling data $-$ a lot of data! Data itself is another source of probability. -->
+</section>
+<section id="conditional-probability" class="level3" data-number="1.0.3">
+<h3 data-number="1.0.3" class="anchored" data-anchor-id="conditional-probability"><span class="header-section-number">1.0.3</span> Conditional Probability</h3>
+</section>
+<section id="negation-rule" class="level3" data-number="1.0.4">
+<h3 data-number="1.0.4" class="anchored" data-anchor-id="negation-rule"><span class="header-section-number">1.0.4</span> Negation Rule</h3>
+</section>
+<section id="addition-rule" class="level3" data-number="1.0.5">
+<h3 data-number="1.0.5" class="anchored" data-anchor-id="addition-rule"><span class="header-section-number">1.0.5</span> Addition Rule</h3>
+</section>
+<section id="mutually-exclusive-events" class="level3" data-number="1.0.6">
+<h3 data-number="1.0.6" class="anchored" data-anchor-id="mutually-exclusive-events"><span class="header-section-number">1.0.6</span> Mutually Exclusive Events</h3>
+</section>
+<section id="multiplication-rule" class="level3" data-number="1.0.7">
+<h3 data-number="1.0.7" class="anchored" data-anchor-id="multiplication-rule"><span class="header-section-number">1.0.7</span> Multiplication Rule</h3>
+</section>
+<section id="independent-events" class="level3" data-number="1.0.8">
+<h3 data-number="1.0.8" class="anchored" data-anchor-id="independent-events"><span class="header-section-number">1.0.8</span> Independent Events</h3>
+</section>
+</section>
+<section id="probability-models" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="probability-models"><span class="header-section-number">1.1</span> Probability Models</h2>
+<section id="binomial-model" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="binomial-model"><span class="header-section-number">1.1.1</span> Binomial Model</h3>
+</section>
+<section id="normal-model" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="normal-model"><span class="header-section-number">1.1.2</span> Normal Model</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -630,10 +673,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome!! 🐈">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome!! 🐈</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./probability.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -642,4 +688,4 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/probability.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/probability.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
