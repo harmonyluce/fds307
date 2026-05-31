@@ -172,14 +172,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- Q1 MULTI-DROPDOWN (R FUNCTIONS) -->
 <div class="question">
 <p>
-<strong>Q1.</strong> Match each description with the corresponding R function featured in this chapter.
+Match each description with the corresponding R function featured in this chapter.
 </p>
 <ul style="padding-left: 1.2rem; list-style-type: square;">
 <li>
 Returns a quantile of a normally distributed random variable: <select data-answer="qnorm"> <option value="">—</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="prop.table">prop.table()</option> </select>
 </li>
 <li>
-Calculates probability of X ≤ value in binomial distribution: <select data-answer="pbinom"> <option value="">—</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="prop.table">prop.table()</option> </select>
+Calculates the total probability from zero to <select data-answer="pbinom"> <option value="">—</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="prop.table">prop.table()</option> </select>
 </li>
 <li>
 Empirical rule validation uses: <select data-answer="pnorm"> <option value="">—</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="prop.table">prop.table()</option> </select>
@@ -192,7 +192,7 @@ Joint probability tables are produced using: <select data-answer="prop.table"> <
 <!-- Q2 AIRLINES -->
 <div class="question">
 <p>
-<strong>Q2.</strong> Airlines often overbook to hedge against no-shows. For example, if 140 tickets are sold for a 134-seat flight where passengers have an independent 9% chance of not showing up, what is the probability that the airline gets fewer than 6 no-shows?
+Airlines often overbook to hedge against no-shows. For example, if 140 tickets are sold for a 134-seat flight where passengers have an independent 9% chance of not showing up, what is the probability that the airline gets fewer than 6 no-shows?
 </p>
 <div>
 <p><label><input type="radio" name="q2" data-answer="false"> 0.7%</label> <label><input type="radio" name="q2" data-answer="true"> 1.1%</label> <label><input type="radio" name="q2" data-answer="false"> 1.6%</label> <label><input type="radio" name="q2" data-answer="false"> 2.7%</label> <label><input type="radio" name="q2" data-answer="false"> 97%</label> <label><input type="radio" name="q2" data-answer="false"> 99%</label></p>
@@ -201,7 +201,7 @@ Joint probability tables are produced using: <select data-answer="prop.table"> <
 <!-- Q3 -->
 <div class="question">
 <p>
-<strong>Q3.</strong> Suppose that events A and B each have nonzero probability. Determine whether each statement is TRUE or FALSE.
+Suppose that events A and B each have nonzero probability. Determine whether each statement is TRUE or FALSE.
 </p>
 <ul style="padding-left: 1.2rem; list-style-type: square;">
 <li>
@@ -221,7 +221,7 @@ Joint probability tables are produced using: <select data-answer="prop.table"> <
 <!-- Q4 SNOW -->
 <div class="question">
 <p>
-<strong>Q4.</strong> As a major winter storm looms on the radar, a rookie meteorologist notes that there is exactly a 13% chance of snow. If they want the probability it will NOT snow, what rule must they apply?
+As a major winter storm looms on the radar, a rookie meteorologist notes that there is exactly a 13% chance of snow. If they want the probability it will NOT snow, what rule must they apply?
 </p>
 <div>
 <p><label><input type="radio" name="q4" data-answer="false"> addition</label> <label><input type="radio" name="q4" data-answer="false"> delulu</label> <label><input type="radio" name="q4" data-answer="false"> multiplication</label> <label><input type="radio" name="q4" data-answer="true"> negation</label> <label><input type="radio" name="q4" data-answer="false"> rizz</label> <label><input type="radio" name="q4" data-answer="false"> three-month</label></p>
@@ -230,7 +230,7 @@ Joint probability tables are produced using: <select data-answer="prop.table"> <
 <!-- Q5 -->
 <div class="question">
 <p>
-<strong>Q5.</strong> In a controlled cognitive experiment, participants are asked to press a button as soon as a visual stimulus appears on a screen. Each participant completes many trials. Because reaction time is influenced by many small factors—attention, neural processing speed, fatigue, and momentary distractions—the recorded reaction times vary from trial to trial. Researchers find that reaction times (in milliseconds) for a typical adult under these conditions are approximately normal, with a mean of 250ms and standard deviation of 40ms.
+In a controlled cognitive experiment, participants are asked to press a button as soon as a visual stimulus appears on a screen. Each participant completes many trials. Because reaction time is influenced by many small factors—attention, neural processing speed, fatigue, and momentary distractions—the recorded reaction times vary from trial to trial. Researchers find that reaction times (in milliseconds) for a typical adult under these conditions are approximately normal, with a mean of 250ms and standard deviation of 40ms.
 </p>
 <ol style="padding-left: 1.2rem;">
 <li>
@@ -250,7 +250,7 @@ Given that an adult’s reaction time is shorter than 250ms, the probability it 
 <!-- Q6 -->
 <div class="question">
 <p>
-<strong>Q6.</strong> Among the great selection of amusements and rides in a typical fair is a quick game of rolling a biased die. The distribution of the die’s faces is tabulated below.
+Among the great selection of amusements and rides in a typical fair is a quick game of rolling a biased die. The distribution of the die’s faces is tabulated below.
 </p>
 <p>
 You have to shell out $3 to play the game. The mechanics are simple:
@@ -273,7 +273,7 @@ Otherwise, your payout is $28.
 <!-- Q7 -->
 <div class="question">
 <p>
-<strong>Q7.</strong> At the peak of operational pressure, the City of Austin Animal Shelter undertook a comprehensive review of its historical intake and outcome records.
+At the peak of operational pressure, the City of Austin Animal Shelter undertook a comprehensive review of its historical intake and outcome records.
 </p>
 <p>
 For each animal, two binary variables were recorded: stray and adopted.
@@ -303,26 +303,32 @@ Which of the following can be correctly inferred from the table?
   font-family: system-ui, sans-serif;
 }
 
-/* spacing + safety */
+.quiz-meta {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e6e6e6;
+  color: #333;
+}
+
 .question {
   padding: 18px;
   border-bottom: 1px solid #e6e6e6;
   display: none;
 }
 
-/* clean radio stacking */
 .question label {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin: 6px 0;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+  cursor: pointer;
 }
 
-/* number header */
-.quiz-meta {
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #444;
+.question input[type="radio"] {
+  margin: 0;
+  flex-shrink: 0;
 }
 
 select {
@@ -335,9 +341,6 @@ select {
   gap: 10px;
 }
 </style>
-<div id="quizMeta" class="quiz-meta">
-
-</div>
 <div id="controls">
 <p><button id="prev">Previous</button> <button id="next">Next</button> <button id="submit">Submit</button> <button id="reset">Reset</button></p>
 </div>
@@ -356,7 +359,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const submit = document.getElementById("submit");
   const reset = document.getElementById("reset");
   const result = document.getElementById("result");
-  const meta = document.getElementById("quizMeta");
 
   let current = 0;
 
@@ -367,23 +369,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function updateMeta() {
-    meta.textContent = `Question ${current + 1} of ${questions.length}`;
-  }
+function show(i) {
 
-  function show(i) {
-    questions.forEach((q, idx) => {
-      q.style.display = idx === i ? "block" : "none";
-    });
+  questions.forEach((q, idx) => {
 
-    current = i;
+    q.style.display = idx === i ? "block" : "none";
 
-    prev.style.display = current === 0 ? "none" : "inline-block";
-    next.style.display = current === questions.length - 1 ? "none" : "inline-block";
-    submit.style.display = current === questions.length - 1 ? "inline-block" : "none";
+    const oldMeta = q.querySelector(".quiz-meta");
+    if (oldMeta) oldMeta.remove();
 
-    updateMeta();
-  }
+  });
+
+  current = i;
+
+  const currentQuestion = questions[current];
+
+  const metaDiv = document.createElement("div");
+  metaDiv.className = "quiz-meta";
+  metaDiv.textContent = `Question ${current + 1} of ${questions.length}`;
+
+  currentQuestion.prepend(metaDiv);
+
+  prev.style.display = current === 0 ? "none" : "inline-block";
+  next.style.display = current === questions.length - 1 ? "none" : "inline-block";
+  submit.style.display = current === questions.length - 1 ? "inline-block" : "none";
+}
 
   function randomize() {
 
