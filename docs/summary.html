@@ -74,6 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -167,343 +168,229 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="quiz-bank" data-random-questions="true" data-random-options="true" data-mode="exam">
-
-  <div class="questions">
-
-    <!-- =========================
-         Q1 MULTI-DROPDOWN (R FUNCTIONS)
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>Choose the R function that makes each statement valid.</p>
-
-      <ul style="padding-left: 1.2rem; list-style-type: square;">
-
-        <li>
-          Use 
-          <select data-answer="pnorm">
-            <option value="">---</option>
-            <option value="dbinom">dbinom()</option>
-            <option value="pbinom">pbinom()</option>
-            <option value="pnorm">pnorm()</option>
-            <option value="prop.table_m1">prop.table(margin = 1)</option>
-            <option value="prop.table_m2">prop.table(margin = 2)</option>
-            <option value="qnorm">qnorm()</option>
-          </select>
-          to quantify the area under the normal curve, to the left of a specific value.
-        </li>
-
-        <li>
-          Obtain a table of probabilities, all of which are conditioned on the variable placed at the right of the plus sign in xtabs(), after piping it into 
-          <select data-answer="prop.table_m2">
-            <option value="">---</option>
-            <option value="dbinom">dbinom()</option>
-            <option value="pbinom">pbinom()</option>
-            <option value="pnorm">pnorm()</option>
-            <option value="prop.table">prop.table()</option>
-            <option value="prop.table_m1">prop.table(margin = 1)</option>
-            <option value="prop.table_m2">prop.table(margin = 2)</option>
-          </select>
-          .
-        </li>
-
-        <li>
-          The 
-          <select data-answer="pbinom">
-            <option value="">---</option>
-            <option value="dbinom">dbinom()</option>
-            <option value="pbinom">pbinom()</option>
-            <option value="prop.table">prop.table()</option>
-            <option value="prop.table_m1">prop.table(margin = 1)</option>
-            <option value="prop.table_m2">prop.table(margin = 2)</option>
-            <option value="qnorm">qnorm()</option>
-          </select>
-          function determines the total probability from zero up to your target value in a binomial distribution.
-        </li>
-
-        <li>
-          To get a joint probability table, pipe the cross-tabulated data from xtabs() directly into
-          <select data-answer="prop.table">
-            <option value="">---</option>
-            <option value="pbinom">pbinom()</option>
-            <option value="pnorm">pnorm()</option>
-            <option value="prop.table">prop.table()</option>
-            <option value="prop.table_m1">prop.table(margin = 1)</option>
-            <option value="prop.table_m2">prop.table(margin = 2)</option>
-            <option value="qnorm">qnorm()</option>
-          </select>
-          .
-        </li>
-
-      </ul>
-
-    </div>
-
-    <!-- =========================
-         Q2 AIRLINES (RADIO)
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        Airlines often overbook to hedge against no-shows. For example, if 140 tickets are sold for a 134-seat flight where passengers have an independent 9% chance of not showing up, what is the probability that the airline gets fewer than 6 no-shows?
-      </p>
-
-      <div>
-        <div><input type="radio" name="q2"> 0.7%</div>
-        <div><input type="radio" name="q2" data-answer="true"> 1.1%</div>
-        <div><input type="radio" name="q2"> 1.6%</div>
-        <div><input type="radio" name="q2"> 2.7%</div>
-        <div><input type="radio" name="q2"> 97%</div>
-        <div><input type="radio" name="q2"> 99%</div>
-      </div>
-
-    </div>
-
-    <!-- =========================
-         Q3 TRUE/FALSE DROPDOWN
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        Suppose that events A and B each have nonzero probability. Determine whether each statement is TRUE or FALSE.
-      </p>
-
-      <ul style="padding-left: 1.2rem; list-style-type: square;">
-
-        <li>
-          <select data-answer="false">
-            <option value="">---</option>
-            <option value="true">TRUE</option>
-            <option value="false">FALSE</option>
-          </select>
-          When A and B are independent, it follows that P(A | not B) = P(not B).
-        </li>
-
-        <li>
-          <select data-answer="false">
-            <option value="">---</option>
-            <option value="true">TRUE</option>
-            <option value="false">FALSE</option>
-          </select>
-          The addition rule simplifies to P(A and B) = P(A) + P(B) when A and B are mutually exclusive.
-        </li>
-
-        <li>
-          <select data-answer="false">
-            <option value="">---</option>
-            <option value="true">TRUE</option>
-            <option value="false">FALSE</option>
-          </select>
-          The joint probability P(A and B) is equal to zero as long as A and B are independent.
-        </li>
-
-        <li>
-          <select data-answer="true">
-            <option value="">---</option>
-            <option value="true">TRUE</option>
-            <option value="false">FALSE</option>
-          </select>
-          If A and B are complementary, then P(A) = 1 − P(B).
-        </li>
-
-      </ul>
-
-    </div>
-
-    <!-- =========================
-         Q4 SNOW QUESTION
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        As a major winter storm looms on the radar, a rookie meteorologist notes that there is exactly a 13% chance of snow.
-        If they want the probability it will NOT snow, what rule must they apply?
-      </p>
-
-      <div>
-        <div><input type="radio" name="q4"> addition</div>
-        <div><input type="radio" name="q4"> delulu</div>
-        <div><input type="radio" name="q4"> multiplication</div>
-        <div><input type="radio" name="q4" data-answer="true"> negation</div>
-        <div><input type="radio" name="q4"> rizz</div>
-        <div><input type="radio" name="q4"> three-month</div>
-      </div>
-
-    </div>
-
-    <!-- =========================
-         Q5 REACTION TIME
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        In a controlled cognitive experiment, participants are asked to press a button as soon as a visual stimulus appears on a screen.
-        Each participant completes many trials. Because reaction time is influenced by many small factors—attention, neural processing speed,
-        fatigue, and momentary distractions—the recorded reaction times vary from trial to trial.
-
-        Researchers find that reaction times (in milliseconds) for a typical adult under these conditions are approximately normal,
-        with a mean of 250ms and standard deviation of 40ms.
-      </p>
-
-      <ol style="padding-left: 1.2rem;">
-        <li>There is roughly a 19% chance that an adult has a reaction time longer than 215ms.</li>
-        <li>The IQR of reaction times is close to 54ms.</li>
-        <li>Given that an adult’s reaction time is shorter than 250ms, the probability it is longer than 210ms is approximately 84%</li>
-      </ol>
-
-      <div>
-        <div><input type="radio" name="q5"> 1 only</div>
-        <div><input type="radio" name="q5" data-answer="true"> 2 only</div>
-        <div><input type="radio" name="q5"> 3 only</div>
-        <div><input type="radio" name="q5"> 1 and 2 only</div>
-        <div><input type="radio" name="q5"> 1 and 3 only</div>
-        <div><input type="radio" name="q5"> 2 and 3 only</div>
-        <div><input type="radio" name="q5"> All</div>
-        <div><input type="radio" name="q5"> None</div>
-      </div>
-
-    </div>
-
-    <!-- =========================
-         Q6 EXPECTED VALUE
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        Among the great selection of amusements and rides in a typical fair is a quick game of rolling a biased die.
-        The distribution of the die’s faces is tabulated below.
-      </p>
-
-      
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="padding: 6px 10px"><strong>face</strong></td>
-<td style="padding: 6px 10px">1</td>
-<td style="padding: 6px 10px">2</td>
-<td style="padding: 6px 10px">3</td>
-<td style="padding: 6px 10px">4</td>
-<td style="padding: 6px 10px">5</td>
-<td style="padding: 6px 10px">6</td>
-</tr>
-<tr class="even">
-<td style="padding: 6px 10px"><strong>prob</strong></td>
-<td style="padding: 6px 10px">0.17</td>
-<td style="padding: 6px 10px">0.15</td>
-<td style="padding: 6px 10px">0.09</td>
-<td style="padding: 6px 10px">0.19</td>
-<td style="padding: 6px 10px">0.21</td>
-<td style="padding: 6px 10px">0.19</td>
-</tr>
-</tbody>
-</table>
-
-
-      <p>
-        You have to shell out $3 to play the game. The mechanics are simple:
-      </p>
-
-      <ul>
-        <li>If you land on a face lower than 3, your payout is $12.</li>
-        <li>If you land on a face higher than 3, you pay the game operator $4.</li>
-        <li>Otherwise, your payout is $28.</li>
-      </ul>
-
-      <p>Which of the following statements is supported by the information provided?</p>
-
-      <div>
-        <div><input type="radio" name="q6" data-answer="true"> On average, playing this game many times leads to a small positive gain of about $1 per play.</div>
-        <div><input type="radio" name="q6"> Since face 5 is the most likely outcome and has a positive payoff, the game must be profitable overall.</div>
-        <div><input type="radio" name="q6"> The game is fair because the gains and losses are balanced across the different outcomes.</div>
-        <div><input type="radio" name="q6"> Because more than half of the outcomes lead to a loss, the game must have a negative expected value.</div>
-        <div><input type="radio" name="q6"> The expected value can be estimated by looking mainly at the most likely outcome (face 5), since it contributes most to the average.</div>
-        <div><input type="radio" name="q6"> The average result over many plays will be close to zero, so the small gains and losses mostly cancel out.</div>
-      </div>
-
-    </div>
-
-    <!-- =========================
-         Q7 SHELTER (FIXED STRUCTURE)
-         ========================= -->
-    <div class="q">
-
-      <div class="q-progress"></div>
-
-      <p>
-        At the peak of operational pressure, the City of Austin Animal Shelter undertook a comprehensive review of its historical intake and outcome records. The goal was to better understand how early intake conditions might relate to eventual adoption outcomes.
-      </p>
-
-      <p>
-        For each animal, two binary variables were recorded:
-      </p>
-
-      <p>
-        stray: whether the animal was taken in as a stray (stray / not stray)<br>
-        adopted: whether the animal was ultimately adopted (adopted / not adopted)
-      </p>
-
-      <p>
-        To explore the relationship between intake condition and outcome, the analyst computed:
-      </p>
-
-      <pre>xtabs(~ stray + adopted, data = shelter) %&gt;%
-  prop.table(margin = 2) %&gt;%
-  round(2)
-      </pre>
-      <p>With the output being:</p>
-
-      <pre>           adopted
-stray       adopted not adopted
-  not stray    0.44        0.38
-  stray        0.56        0.62
-      </pre>
-
-      <p>Which of the following can be correctly inferred from the table?</p>
-
-      <ol style="padding-left: 1.2rem;">
-        <li>There is a 56% chance that an animal in the shelter was both taken in as a stray and eventually adopted.</li>
-        <li>Among animals that were not adopted, 62% were taken in as strays.</li>
-        <li>Roughly 82% of all animals in the shelter were not taken in as strays.</li>
-      </ol>
-
-      <div>
-        <div><input type="radio" name="q7"> 1 only</div>
-        <div><input type="radio" name="q7" data-answer="true"> 2 only</div>
-        <div><input type="radio" name="q7"> 3 only</div>
-        <div><input type="radio" name="q7"> 1 and 2 only</div>
-        <div><input type="radio" name="q7"> 1 and 3 only</div>
-        <div><input type="radio" name="q7"> 2 and 3 only</div>
-        <div><input type="radio" name="q7"> All (1, 2, and 3)</div>
-        <div><input type="radio" name="q7"> None</div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="quiz-controls">
-    <button class="prev-btn">Previous</button>
-    <button class="next-btn">Next</button>
-    <button class="grade-btn">Submit</button>
-    <button class="reset-btn">Reset</button>
-  </div>
-
-  <p class="score"></p>
+<div id="quiz">
+<!-- Q1 -->
+<div class="question">
+<p>
+<strong>Q1.</strong> Match each description with the corresponding R function featured in this chapter.
+</p>
+<ul>
+<li>
+Returns a quantile of a normally distributed random variable: <select data-answer="qnorm"> <option value="">Choose…</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="pnorm">pnorm()</option> <option value="prop.table">prop.table()</option> </select>
+</li>
+<li>
+Calculates the probability of a binomial random variable X being at most a specified value: <select data-answer="pbinom"> <option value="">Choose…</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="pnorm">pnorm()</option> <option value="prop.table">prop.table()</option> </select>
+</li>
+<li>
+Validates the estimated probabilities described in the Empirical Rule: <select data-answer="pnorm"> <option value="">Choose…</option> <option value="dbinom">dbinom()</option> <option value="pbinom">pbinom()</option> <option value="pnorm">pnorm()</option> <option value="qnorm">qnorm()</option> <option value="pnorm">pnorm()</option> <option value="prop.table">prop.table()</option> </select>
+</li>
+</ul>
+</div>
+<!-- Q2 -->
+<div class="question">
+<p>
+<strong>Q2.</strong> If the chance that it will snow today is 13%, then by the <select data-answer="negation"> <option value="">Choose…</option> <option value="addition">addition</option> <option value="delulu">delulu</option> <option value="multiplication">multiplication</option> <option value="negation">negation</option> <option value="three-month">three-month</option> <option value="three-month">rizz</option> </select> rule, the probability it will not is 87%.
+</p>
+</div>
+<!-- Q3 -->
+<div class="question">
+<p>
+<strong>Q3.</strong> Let’s say an airline sold tickets to 140 people, each of whom will either show up to fly or will not show up to fly. They have observed historically a 9% probability that a passenger will be a no-show for a flight. They issued 140 tickets for 134 seats because they expect at least 6 no-shows. Assume each passenger showing up or not showing up to fly are independent. What is the probability that there are fewer than 6 no-shows?
+</p>
+<ul>
+<li>
+<label> <input type="radio" name="q3" value="0.7%"> 0.7% </label>
+</li>
+<li>
+<label> <input type="radio" name="q3" value="1.1%"> 1.1% </label>
+</li>
+<li>
+<label> <input type="radio" name="q3" value="1.6%"> 1.6% </label>
+</li>
+<li>
+<label> <input type="radio" name="q3" value="2.7%"> 2.7% </label>
+</li>
+<li>
+<label> <input type="radio" name="q3" value="97%"> 97% </label>
+</li>
+<li>
+<label> <input type="radio" name="q3" value="99%"> 99% </label>
+</li>
+</ul>
+</div>
+</div>
+<div id="result">
 
 </div>
+<button id="prev">
+Previous
+</button>
+<button id="next">
+Next
+</button>
+<button id="submit">
+Submit
+</button>
+<button id="reset">
+Reset
+</button>
+<div id="result">
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ----------------------------
+  // ONE QUESTION AT A TIME SETUP
+  // ----------------------------
+
+  const questions = document.querySelectorAll("#quiz .question");
+  let currentQuestion = 0;
+
+  // hide all except first
+  questions.forEach((q, i) => {
+    q.style.display = (i === 0) ? "block" : "none";
+  });
+
+  // ----------------------------
+  // RANDOMIZE DROPDOWNS
+  // ----------------------------
+
+  document.querySelectorAll("#quiz select").forEach(sel => {
+
+    const first = sel.options[0];
+    const others = Array.from(sel.options).slice(1);
+
+    others.sort(() => Math.random() - 0.5);
+
+    sel.innerHTML = "";
+    sel.appendChild(first);
+    others.forEach(opt => sel.appendChild(opt));
+
+  });
+
+  // ----------------------------
+  // BUTTONS
+  // ----------------------------
+
+  const submit = document.getElementById("submit");
+  const reset = document.getElementById("reset");
+  const result = document.getElementById("result");
+
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+
+  // initial button state
+  if (prev) prev.style.display = "none";
+  if (submit) submit.style.display = "none";
+
+  // ----------------------------
+  // NAVIGATION
+  // ----------------------------
+
+  function showQuestion(index) {
+
+    questions.forEach((q, i) => {
+      q.style.display = (i === index) ? "block" : "none";
+    });
+
+    currentQuestion = index;
+
+    if (prev) prev.style.display = (index === 0) ? "none" : "inline-block";
+
+    if (next && submit) {
+      if (index === questions.length - 1) {
+        next.style.display = "none";
+        submit.style.display = "inline-block";
+      } else {
+        next.style.display = "inline-block";
+        submit.style.display = "none";
+      }
+    }
+  }
+
+  if (next) {
+    next.onclick = () => {
+      if (currentQuestion < questions.length - 1) {
+        showQuestion(currentQuestion + 1);
+      }
+    };
+  }
+
+  if (prev) {
+    prev.onclick = () => {
+      if (currentQuestion > 0) {
+        showQuestion(currentQuestion - 1);
+      }
+    };
+  }
+
+  // ----------------------------
+  // SCORING
+  // ----------------------------
+
+  submit.onclick = () => {
+
+    let totalScore = 0;
+    let maxScore = 0;
+
+    questions.forEach(q => {
+
+      maxScore += 1;
+
+      const selects = q.querySelectorAll("select");
+      const radios = q.querySelectorAll("input[type=radio]");
+
+      let questionScore = 0;
+
+      // DROPDOWN
+      if (selects.length > 0) {
+
+        const weight = 1 / selects.length;
+
+        selects.forEach(sel => {
+          if (sel.value === sel.dataset.answer) {
+            questionScore += weight;
+          }
+        });
+
+      }
+
+      // RADIO
+      else if (radios.length > 0) {
+
+        const checked = q.querySelector("input[type=radio]:checked");
+        const correctAnswer = "1.1%";
+
+        if (checked && checked.value === correctAnswer) {
+          questionScore = 1;
+        } else {
+          questionScore = 0;
+        }
+
+      }
+
+      totalScore += questionScore;
+
+    });
+
+    const percent = (totalScore / maxScore) * 100;
+
+    result.textContent =
+      `Score: ${totalScore.toFixed(2)}/${maxScore} = ${percent.toFixed(1)}%`;
+
+  };
+
+  // ----------------------------
+  // RESET
+  // ----------------------------
+
+  reset.onclick = () => {
+    location.reload();
+  };
+
+});
+</script>
 
 
 
