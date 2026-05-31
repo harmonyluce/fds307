@@ -1,9 +1,12 @@
-# Preface {.unnumbered}
+# Welcome!! 🐈 {.unnumbered}
 
-This is a Quarto book.
+Dear reader,
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This online textbook serves as your first engagement with the concepts and applications of data science. It also introduces you to R and RStudio, which will be the primary computing tool to assist you in making data-driven inferences in practice.
 
-```{r}
-1 + 1
-```
+There is little-to-no expectation of you to be excellent navigators of one webpage and one desktop application. So it is highly recommended that as you immerse through this textbook, you read it while copying and executing the code blocks presented in each chapter. Making that a habit for whichever course this reference gets used boosts the chances of the pretension of learning to escape your soul. If you find yourself less inclined to follow that recommendation, then you can just probably go back home and take over your father's car dealership, or help your mother with grocery shopping.
+
+At any moment you struggle with the coding aspect, reach out to a colleague or to your professor or TA. The sooner you address the hurdle, the better. Your basic recipe for success includes allocating enough time for this and not devote way too much to whatever foolish activities your chapter mates are engaging in.
+
+Take it easy! 😁\
+$\small\textit{Dr. H}$
