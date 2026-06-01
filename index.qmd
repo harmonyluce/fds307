@@ -1,4 +1,4 @@
-# Welcome!! 🐈 {.unnumbered}
+# Welcome!! {.unnumbered}
 
 Dear reader,
 
@@ -9,4 +9,12 @@ There is little-to-no expectation of you to be excellent navigators of one webpa
 At any moment you struggle with the coding aspect, reach out to a colleague or to your professor or TA. The sooner you address the hurdle, the better. Your basic recipe for success includes allocating enough time for this and not devote way too much to whatever foolish activities your chapter mates are engaging in.
 
 Take it easy! 😁\
-$\small\textit{Dr. H}$
+$\small\textit{Dr. H}$ 🐈
+
+<style>
+
+main {
+  text-align: justify;
+}
+
+</style>

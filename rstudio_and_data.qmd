@@ -1,0 +1,67 @@
+# RStudio and Data
+
+## Our computing tool
+
+### Hello posit
+
+As planned, we will use R to carry out all of our calculations. Visit [posit](https://posit.co/download/rstudio-desktop) to download R and RStudio. When you scroll through that link, you should see those two steps beneath.
+
+![](images/clipboard-2773077367.png)
+
+It is important that R must be installed first, because RStudio will not work without it. RStudio is what we will be opening and using all the time. It is an IDE (integrated development environment), with organized panes where you can write and execute code as well as navigate files and output. Running code in RStudio initiates R to do its main job, i.e. to perform all of the computational work.
+
+### Launch RStudio
+
+After successfully setting up R and RStudio, go to your Windows search bar or Mac's spotlight, type in RStudio then click it. That should launch RStudio and you will see the default IDE with three panes.
+
+![](images/clipboard-281934905.png)
+
+### Navigating RStudio
+
+That view would suffice if we are only using it as a glorified calculator. As with every topic we would need to do computations, it is ideal that we have a pane where we can create and edit code -- we do that by hitting `control+shift+N` on your keyboard and it will open an untitled script in a new pane called Source.
+
+![](images/clipboard-1434336522.png)
+
+RStudio has four primary panes:
+
+- The **Source** pane, located top left, allows us to view and edit code-related files (e.g. .R, .rmd, .qmd, .txt).
+
+- The **Console** pane, located bottom left, executes code and displays numerical results.
+
+- The **Environment** pane, located top right, lists currently saved objects (e.g. stored values, imported datasets).
+
+- The **Output** pane, located bottom right, is mainly utilized for managing files, looking at graphs, and browsing documentation of functions and packages through its Help tab.
+
+That is the default pane layout; if along the way, you feel that the Console and Environment panes should switch places or you want the user interface to have a different font, different background color, and all the other aesthetics, the Global Options under Tools can help you make those modifications. The [RStudio IDE User Guide](https://docs.posit.co/ide/user/)has a thorough documentation of such, but for the purposes of keeping it simple, we will stick with the default configuration, except for the tab width (I prefer that it is a width value of 1 -- this can be changed through Tools --\> Global Options --\> Code).
+
+### Basic Computations
+
+Ideally, we draft code in the source pane inside an R script (i.e. the Untitled file) and we click Run (`ctrl+enter`) to execute it. The result will appear in the console. While the console can also do this, it often leads to problematic situations as soon as we write multiple lines of code.
+
+![](images/clipboard-103972812.png)
+
+It is good practice that coding is all done in a script, rather than the directly in the console. Describing the contents or practically leaving comments in a lengthy code is also an advantage of using a script versus the console. Comments in the script can be made by putting a pound sign (`#`) before the line -- it does not matter how many, as long as there is at least one, it will turn that line into a comment. This improves overall coding documentation as we learn more concepts that require certain packages and functions.
+
+![](images/clipboard-3584689158.png)
+
+A common data structure that can be created in R is a vector -- a one dimensional collection of values stored in a single object. The concatenate function, `c()`, creates vectors and doing so requires that the elements inside it are separated by commas. In the example below, they were stored in the environment as an object named `scores`. Now every time we type scores or call out scores in a function, it will use that particular vector we saved. Of the many built in R functions, `mean()` is one of them, which in this case was used to obtain the average of their scores.
+
+![](images/clipboard-213827724.png)
+
+## Data
+
+### Components of a Dataset
+
+### Population vs. Sample
+
+### Unit of Analysis
+
+```{=html}
+<style>
+
+main {
+  text-align: justify;
+}
+
+</style>
+```

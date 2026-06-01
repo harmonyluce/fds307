@@ -10,7 +10,7 @@ $$0\leq P(\textrm{event})\leq 1$$
 
 In this chapter, you will get acquainted with the basics of probability with emphasis on learning how to estimate them using data.
 
-## Events, Rules, and Sources of Probability {.unnumbered}
+## Events, Rules, and Sources of Probability
 
 There are three fundamental ways of describing probability in terms of events: simple, joint, and conditional.
 
@@ -22,7 +22,7 @@ This is an application of the **counting principle**. Assuming all outcomes are 
 
 $$\textrm{probability of an event happening}=\dfrac{\#\;\textrm{of outcomes of interest}}{\textrm{total }\#\;\textrm{of outcomes}}.$$
 
-How about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a cafe?
+How about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a café?
 
 ### Estimating Probabilities
 
@@ -45,3 +45,12 @@ How about a slightly more interesting (and not as boring as coin flipping or dic
 ### Binomial Model
 
 ### Normal Model
+
+
+<style>
+
+main {
+  text-align: justify;
+}
+
+</style>

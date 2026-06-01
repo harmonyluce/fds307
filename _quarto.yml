@@ -11,20 +11,24 @@ book:
   repo-actions: [source, edit, issue]
   chapters:
     - index.qmd
+    - rstudio_and_data.qmd
     - probability.qmd
     - summary.qmd
-    - references.qmd
   
 format:
   html:
-    theme: [default, styles/edav3.scss]
+    theme: 
+      light: zephyr
+      dark: vapor
+    toc: true
     highlight-style: styles/joyce.theme
     css: styles/styles.css
     include-after-body:
       - scripts/quiz.js
     callout-icon: false
     
-bibliography: references.bib    
+# [default, styles/edav3.scss]
+# bibliography: references.bib    
     
 knitr:
   opts_chunk: 

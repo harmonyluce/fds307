@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Probability – Foundations of Data Science</title>
+<title>1&nbsp; RStudio and Data – Foundations of Data Science</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./rstudio_and_data.html" rel="prev">
+<link href="./probability.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -281,7 +252,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rstudio_and_data.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio and Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -318,13 +289,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rstudio_and_data.html" class="sidebar-item-text sidebar-link">
+  <a href="./rstudio_and_data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio and Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./probability.html" class="sidebar-item-text sidebar-link active">
+  <a href="./probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
@@ -344,24 +315,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#events-rules-and-sources-of-probability" id="toc-events-rules-and-sources-of-probability" class="nav-link active" data-scroll-target="#events-rules-and-sources-of-probability"><span class="header-section-number">2.1</span> Events, Rules, and Sources of Probability</a>
+  <li><a href="#our-computing-tool" id="toc-our-computing-tool" class="nav-link active" data-scroll-target="#our-computing-tool"><span class="header-section-number">1.1</span> Our computing tool</a>
   <ul class="collapse">
-  <li><a href="#careful-counting" id="toc-careful-counting" class="nav-link" data-scroll-target="#careful-counting"><span class="header-section-number">2.1.1</span> Careful Counting</a></li>
-  <li><a href="#estimating-probabilities" id="toc-estimating-probabilities" class="nav-link" data-scroll-target="#estimating-probabilities"><span class="header-section-number">2.1.2</span> Estimating Probabilities</a></li>
-  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">2.1.3</span> Conditional Probability</a></li>
-  <li><a href="#negation-rule" id="toc-negation-rule" class="nav-link" data-scroll-target="#negation-rule"><span class="header-section-number">2.1.4</span> Negation Rule</a></li>
-  <li><a href="#addition-rule" id="toc-addition-rule" class="nav-link" data-scroll-target="#addition-rule"><span class="header-section-number">2.1.5</span> Addition Rule</a></li>
-  <li><a href="#mutually-exclusive-events" id="toc-mutually-exclusive-events" class="nav-link" data-scroll-target="#mutually-exclusive-events"><span class="header-section-number">2.1.6</span> Mutually Exclusive Events</a></li>
-  <li><a href="#multiplication-rule" id="toc-multiplication-rule" class="nav-link" data-scroll-target="#multiplication-rule"><span class="header-section-number">2.1.7</span> Multiplication Rule</a></li>
-  <li><a href="#independent-events" id="toc-independent-events" class="nav-link" data-scroll-target="#independent-events"><span class="header-section-number">2.1.8</span> Independent Events</a></li>
+  <li><a href="#hello-posit" id="toc-hello-posit" class="nav-link" data-scroll-target="#hello-posit"><span class="header-section-number">1.1.1</span> Hello posit</a></li>
+  <li><a href="#launch-rstudio" id="toc-launch-rstudio" class="nav-link" data-scroll-target="#launch-rstudio"><span class="header-section-number">1.1.2</span> Launch RStudio</a></li>
+  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio"><span class="header-section-number">1.1.3</span> Navigating RStudio</a></li>
+  <li><a href="#basic-computations" id="toc-basic-computations" class="nav-link" data-scroll-target="#basic-computations"><span class="header-section-number">1.1.4</span> Basic Computations</a></li>
   </ul></li>
-  <li><a href="#probability-models" id="toc-probability-models" class="nav-link" data-scroll-target="#probability-models"><span class="header-section-number">2.2</span> Probability Models</a>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">1.2</span> Data</a>
   <ul class="collapse">
-  <li><a href="#binomial-model" id="toc-binomial-model" class="nav-link" data-scroll-target="#binomial-model"><span class="header-section-number">2.2.1</span> Binomial Model</a></li>
-  <li><a href="#normal-model" id="toc-normal-model" class="nav-link" data-scroll-target="#normal-model"><span class="header-section-number">2.2.2</span> Normal Model</a></li>
+  <li><a href="#components-of-a-dataset" id="toc-components-of-a-dataset" class="nav-link" data-scroll-target="#components-of-a-dataset"><span class="header-section-number">1.2.1</span> Components of a Dataset</a></li>
+  <li><a href="#population-vs.-sample" id="toc-population-vs.-sample" class="nav-link" data-scroll-target="#population-vs.-sample"><span class="header-section-number">1.2.2</span> Population vs.&nbsp;Sample</a></li>
+  <li><a href="#unit-of-analysis" id="toc-unit-of-analysis" class="nav-link" data-scroll-target="#unit-of-analysis"><span class="header-section-number">1.2.3</span> Unit of Analysis</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/probability.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/probability.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/rstudio_and_data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/rstudio_and_data.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -369,7 +337,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio and Data</span></h1>
 </div>
 
 
@@ -386,54 +354,52 @@ window.Quarto = {
 </header>
 
 
-<p>A probability <strong>quantifies how likely</strong> an event will happen. The probability of some event is a number between 0 and 1, inclusive. i.e.</p>
-<p><span class="math display">\[0\leq P(\textrm{event})\leq 1\]</span></p>
+<section id="our-computing-tool" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="our-computing-tool"><span class="header-section-number">1.1</span> Our computing tool</h2>
+<section id="hello-posit" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="hello-posit"><span class="header-section-number">1.1.1</span> Hello posit</h3>
+<p>As planned, we will use R to carry out all of our calculations. Visit <a href="https://posit.co/download/rstudio-desktop">posit</a> to download R and RStudio. When you scroll through that link, you should see those two steps beneath.</p>
+<p><img src="images/clipboard-2773077367.png" class="img-fluid"></p>
+<p>It is important that R must be installed first, because RStudio will not work without it. RStudio is what we will be opening and using all the time. It is an IDE (integrated development environment), with organized panes where you can write and execute code as well as navigate files and output. Running code in RStudio initiates R to do its main job, i.e.&nbsp;to perform all of the computational work.</p>
+</section>
+<section id="launch-rstudio" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="launch-rstudio"><span class="header-section-number">1.1.2</span> Launch RStudio</h3>
+<p>After successfully setting up R and RStudio, go to your Windows search bar or Mac’s spotlight, type in RStudio then click it. That should launch RStudio and you will see the default IDE with three panes.</p>
+<p><img src="images/clipboard-281934905.png" class="img-fluid"></p>
+</section>
+<section id="navigating-rstudio" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="navigating-rstudio"><span class="header-section-number">1.1.3</span> Navigating RStudio</h3>
+<p>That view would suffice if we are only using it as a glorified calculator. As with every topic we would need to do computations, it is ideal that we have a pane where we can create and edit code – we do that by hitting <code>control+shift+N</code> on your keyboard and it will open an untitled script in a new pane called Source.</p>
+<p><img src="images/clipboard-1434336522.png" class="img-fluid"></p>
+<p>RStudio has four primary panes:</p>
 <ul>
-<li>An event with probability 1 is certain to occur.</li>
-<li>An event with probability 0 is certain NOT to occur.</li>
-<li>A probability can be expressed as a decimal, a fraction, or a percentage.</li>
+<li><p>The <strong>Source</strong> pane, located top left, allows us to view and edit code-related files (e.g.&nbsp;.R, .rmd, .qmd, .txt).</p></li>
+<li><p>The <strong>Console</strong> pane, located bottom left, executes code and displays numerical results.</p></li>
+<li><p>The <strong>Environment</strong> pane, located top right, lists currently saved objects (e.g.&nbsp;stored values, imported datasets).</p></li>
+<li><p>The <strong>Output</strong> pane, located bottom right, is mainly utilized for managing files, looking at graphs, and browsing documentation of functions and packages through its Help tab.</p></li>
 </ul>
-<p>In this chapter, you will get acquainted with the basics of probability with emphasis on learning how to estimate them using data.</p>
-<section id="events-rules-and-sources-of-probability" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="events-rules-and-sources-of-probability"><span class="header-section-number">2.1</span> Events, Rules, and Sources of Probability</h2>
-<p>There are three fundamental ways of describing probability in terms of events: simple, joint, and conditional.</p>
-<section id="careful-counting" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="careful-counting"><span class="header-section-number">2.1.1</span> Careful Counting</h3>
-<p>A <strong>simple probability</strong> is the chance that one event happens. The most common example is the probabilities we can compute from flipping a coin. Understanding the concept of <strong>sample space</strong> is crucial here, as it determines all possible outcomes of an experiment. In a coin flip, the sample space is {H, T}. Assuming it is a fair coin, then the probability of landing tails is 0.5 because there is one outcome of interest out of two possible outcomes.</p>
-<p>This is an application of the <strong>counting principle</strong>. Assuming all outcomes are equally likely to happen, then</p>
-<p><span class="math display">\[\textrm{probability of an event happening}=\dfrac{\#\;\textrm{of outcomes of interest}}{\textrm{total }\#\;\textrm{of outcomes}}.\]</span></p>
-<p>How about a slightly more interesting (and not as boring as coin flipping or dice tossing) scenario? What are the beverage and food preferences of a customer dining at a café?</p>
+<p>That is the default pane layout; if along the way, you feel that the Console and Environment panes should switch places or you want the user interface to have a different font, different background color, and all the other aesthetics, the Global Options under Tools can help you make those modifications. The <a href="https://docs.posit.co/ide/user/">RStudio IDE User Guide</a>has a thorough documentation of such, but for the purposes of keeping it simple, we will stick with the default configuration, except for the tab width (I prefer that it is a width value of 1 – this can be changed through Tools –&gt; Global Options –&gt; Code).</p>
 </section>
-<section id="estimating-probabilities" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="estimating-probabilities"><span class="header-section-number">2.1.2</span> Estimating Probabilities</h3>
-<!-- That's exactly a result of *careful counting* (one source of probability). But data science, on the regular, deals with handling data $-$ a lot of data! Data itself is another source of probability. -->
-</section>
-<section id="conditional-probability" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="conditional-probability"><span class="header-section-number">2.1.3</span> Conditional Probability</h3>
-</section>
-<section id="negation-rule" class="level3" data-number="2.1.4">
-<h3 data-number="2.1.4" class="anchored" data-anchor-id="negation-rule"><span class="header-section-number">2.1.4</span> Negation Rule</h3>
-</section>
-<section id="addition-rule" class="level3" data-number="2.1.5">
-<h3 data-number="2.1.5" class="anchored" data-anchor-id="addition-rule"><span class="header-section-number">2.1.5</span> Addition Rule</h3>
-</section>
-<section id="mutually-exclusive-events" class="level3" data-number="2.1.6">
-<h3 data-number="2.1.6" class="anchored" data-anchor-id="mutually-exclusive-events"><span class="header-section-number">2.1.6</span> Mutually Exclusive Events</h3>
-</section>
-<section id="multiplication-rule" class="level3" data-number="2.1.7">
-<h3 data-number="2.1.7" class="anchored" data-anchor-id="multiplication-rule"><span class="header-section-number">2.1.7</span> Multiplication Rule</h3>
-</section>
-<section id="independent-events" class="level3" data-number="2.1.8">
-<h3 data-number="2.1.8" class="anchored" data-anchor-id="independent-events"><span class="header-section-number">2.1.8</span> Independent Events</h3>
+<section id="basic-computations" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="basic-computations"><span class="header-section-number">1.1.4</span> Basic Computations</h3>
+<p>Ideally, we draft code in the source pane inside an R script (i.e.&nbsp;the Untitled file) and we click Run (<code>ctrl+enter</code>) to execute it. The result will appear in the console. While the console can also do this, it often leads to problematic situations as soon as we write multiple lines of code.</p>
+<p><img src="images/clipboard-103972812.png" class="img-fluid"></p>
+<p>It is good practice that coding is all done in a script, rather than the directly in the console. Describing the contents or practically leaving comments in a lengthy code is also an advantage of using a script versus the console. Comments in the script can be made by putting a pound sign (<code>#</code>) before the line – it does not matter how many, as long as there is at least one, it will turn that line into a comment. This improves overall coding documentation as we learn more concepts that require certain packages and functions.</p>
+<p><img src="images/clipboard-3584689158.png" class="img-fluid"></p>
+<p>A common data structure that can be created in R is a vector – a one dimensional collection of values stored in a single object. The concatenate function, <code>c()</code>, creates vectors and doing so requires that the elements inside it are separated by commas. In the example below, they were stored in the environment as an object named <code>scores</code>. Now every time we type scores or call out scores in a function, it will use that particular vector we saved. Of the many built in R functions, <code>mean()</code> is one of them, which in this case was used to obtain the average of their scores.</p>
+<p><img src="images/clipboard-213827724.png" class="img-fluid"></p>
 </section>
 </section>
-<section id="probability-models" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="probability-models"><span class="header-section-number">2.2</span> Probability Models</h2>
-<section id="binomial-model" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="binomial-model"><span class="header-section-number">2.2.1</span> Binomial Model</h3>
+<section id="data" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="data"><span class="header-section-number">1.2</span> Data</h2>
+<section id="components-of-a-dataset" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="components-of-a-dataset"><span class="header-section-number">1.2.1</span> Components of a Dataset</h3>
 </section>
-<section id="normal-model" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="normal-model"><span class="header-section-number">2.2.2</span> Normal Model</h3>
+<section id="population-vs.-sample" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="population-vs.-sample"><span class="header-section-number">1.2.2</span> Population vs.&nbsp;Sample</h3>
+</section>
+<section id="unit-of-analysis" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="unit-of-analysis"><span class="header-section-number">1.2.3</span> Unit of Analysis</h3>
 <style>
 
 main {
@@ -862,13 +828,13 @@ main {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rstudio_and_data.html" class="pagination-link" aria-label="RStudio and Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">RStudio and Data</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Welcome!!">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome!!</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Quiz">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quiz</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./probability.html" class="pagination-link" aria-label="Probability">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -877,4 +843,4 @@ main {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/probability.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/probability.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/rstudio_and_data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/rstudio_and_data.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

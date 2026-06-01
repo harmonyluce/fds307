@@ -246,6 +246,10 @@ xtabs(~ stray + adopted, data = shelter) %>%
   display: none;
 }
 
+.question p {
+  text-align: justify;
+}
+
 .question label {
   display: flex;
   align-items: center;
