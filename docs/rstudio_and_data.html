@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -47,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-226d340afae30059a5a9c5b278fc5e87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-5748d9dd4222307f5a31e696e2693f5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark-064d1bb06ce13fb2c6cc1d2ab120db56.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-226d340afae30059a5a9c5b278fc5e87.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -76,9 +111,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+#quarto-sidebar .menu-text {
+  display: flex;
+}
+#quarto-sidebar .chapter-number {
+  display: block;
+  width: 1em;
+  text-align: left;
+}
+#quarto-sidebar .chapter-title {
+  display: block;
+  padding-left: 10px;
+  text-indent: -10px;
+  width: 100%;
+}
+</style>
 
 
-<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -301,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+  <a href="./comprequiz.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quiz</span></span></a>
   </div>
 </li>
@@ -317,16 +367,17 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#our-computing-tool" id="toc-our-computing-tool" class="nav-link active" data-scroll-target="#our-computing-tool"><span class="header-section-number">1.1</span> Our computing tool</a>
   <ul class="collapse">
-  <li><a href="#hello-posit" id="toc-hello-posit" class="nav-link" data-scroll-target="#hello-posit"><span class="header-section-number">1.1.1</span> Hello posit</a></li>
-  <li><a href="#launch-rstudio" id="toc-launch-rstudio" class="nav-link" data-scroll-target="#launch-rstudio"><span class="header-section-number">1.1.2</span> Launch RStudio</a></li>
-  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio"><span class="header-section-number">1.1.3</span> Navigating RStudio</a></li>
-  <li><a href="#basic-computations" id="toc-basic-computations" class="nav-link" data-scroll-target="#basic-computations"><span class="header-section-number">1.1.4</span> Basic Computations</a></li>
+  <li><a href="#hello-posit" id="toc-hello-posit" class="nav-link" data-scroll-target="#hello-posit">Hello posit</a></li>
+  <li><a href="#launch-rstudio" id="toc-launch-rstudio" class="nav-link" data-scroll-target="#launch-rstudio">Launch RStudio</a></li>
+  <li><a href="#navigating-rstudio" id="toc-navigating-rstudio" class="nav-link" data-scroll-target="#navigating-rstudio">Navigating RStudio</a></li>
+  <li><a href="#basic-computations" id="toc-basic-computations" class="nav-link" data-scroll-target="#basic-computations">Basic Computations</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   </ul></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">1.2</span> Data</a>
   <ul class="collapse">
-  <li><a href="#components-of-a-dataset" id="toc-components-of-a-dataset" class="nav-link" data-scroll-target="#components-of-a-dataset"><span class="header-section-number">1.2.1</span> Components of a Dataset</a></li>
-  <li><a href="#population-vs.-sample" id="toc-population-vs.-sample" class="nav-link" data-scroll-target="#population-vs.-sample"><span class="header-section-number">1.2.2</span> Population vs.&nbsp;Sample</a></li>
-  <li><a href="#unit-of-analysis" id="toc-unit-of-analysis" class="nav-link" data-scroll-target="#unit-of-analysis"><span class="header-section-number">1.2.3</span> Unit of Analysis</a></li>
+  <li><a href="#components-of-a-dataset" id="toc-components-of-a-dataset" class="nav-link" data-scroll-target="#components-of-a-dataset">Components of a Dataset</a></li>
+  <li><a href="#population-vs.-sample" id="toc-population-vs.-sample" class="nav-link" data-scroll-target="#population-vs.-sample">Population vs.&nbsp;Sample</a></li>
+  <li><a href="#unit-of-analysis" id="toc-unit-of-analysis" class="nav-link" data-scroll-target="#unit-of-analysis">Unit of Analysis</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/blob/main/rstudio_and_data.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/edit/main/rstudio_and_data.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/[YOURACCOUNT]/[YOURREPO]/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -356,19 +407,19 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="our-computing-tool" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="our-computing-tool"><span class="header-section-number">1.1</span> Our computing tool</h2>
-<section id="hello-posit" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="hello-posit"><span class="header-section-number">1.1.1</span> Hello posit</h3>
-<p>As planned, we will use R to carry out all of our calculations. Visit <a href="https://posit.co/download/rstudio-desktop">posit</a> to download R and RStudio. When you scroll through that link, you should see those two steps beneath.</p>
+<section id="hello-posit" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="hello-posit">Hello posit</h3>
+<p>As planned, we will use R to carry out all of our calculations. Visit <a href="https://posit.co/download/rstudio-desktop" target="_blank">posit</a> to download R and RStudio. When you scroll through that link, you should see those two steps beneath.</p>
 <p><img src="images/clipboard-2773077367.png" class="img-fluid"></p>
 <p>It is important that R must be installed first, because RStudio will not work without it. RStudio is what we will be opening and using all the time. It is an IDE (integrated development environment), with organized panes where you can write and execute code as well as navigate files and output. Running code in RStudio initiates R to do its main job, i.e.&nbsp;to perform all of the computational work.</p>
 </section>
-<section id="launch-rstudio" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="launch-rstudio"><span class="header-section-number">1.1.2</span> Launch RStudio</h3>
+<section id="launch-rstudio" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="launch-rstudio">Launch RStudio</h3>
 <p>After successfully setting up R and RStudio, go to your Windows search bar or Mac’s spotlight, type in RStudio then click it. That should launch RStudio and you will see the default IDE with three panes.</p>
 <p><img src="images/clipboard-281934905.png" class="img-fluid"></p>
 </section>
-<section id="navigating-rstudio" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="navigating-rstudio"><span class="header-section-number">1.1.3</span> Navigating RStudio</h3>
+<section id="navigating-rstudio" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="navigating-rstudio">Navigating RStudio</h3>
 <p>That view would suffice if we are only using it as a glorified calculator. As with every topic we would need to do computations, it is ideal that we have a pane where we can create and edit code – we do that by hitting <code>control+shift+N</code> on your keyboard and it will open an untitled script in a new pane called Source.</p>
 <p><img src="images/clipboard-1434336522.png" class="img-fluid"></p>
 <p>RStudio has four primary panes:</p>
@@ -378,28 +429,86 @@ ul.task-list li input[type="checkbox"] {
 <li><p>The <strong>Environment</strong> pane, located top right, lists currently saved objects (e.g.&nbsp;stored values, imported datasets).</p></li>
 <li><p>The <strong>Output</strong> pane, located bottom right, is mainly utilized for managing files, looking at graphs, and browsing documentation of functions and packages through its Help tab.</p></li>
 </ul>
-<p>That is the default pane layout; if along the way, you feel that the Console and Environment panes should switch places or you want the user interface to have a different font, different background color, and all the other aesthetics, the Global Options under Tools can help you make those modifications. The <a href="https://docs.posit.co/ide/user/">RStudio IDE User Guide</a>has a thorough documentation of such, but for the purposes of keeping it simple, we will stick with the default configuration, except for the tab width (I prefer that it is a width value of 1 – this can be changed through Tools –&gt; Global Options –&gt; Code).</p>
+<p>That is the default pane layout; if along the way, you feel that the Console and Environment panes should switch places or you want the user interface to have a different font, different background color, and all the other aesthetics, the Global Options under Tools can help you make those modifications. The <a href="https://docs.posit.co/ide/user/">RStudio IDE User Guide</a> has a thorough documentation of such, but for the purposes of keeping it simple, we will stick with the default configuration, except for the tab width (I prefer that it is a width value of 1 – this can be changed through Tools –&gt; Global Options –&gt; Code).</p>
 </section>
-<section id="basic-computations" class="level3" data-number="1.1.4">
-<h3 data-number="1.1.4" class="anchored" data-anchor-id="basic-computations"><span class="header-section-number">1.1.4</span> Basic Computations</h3>
+<section id="basic-computations" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="basic-computations">Basic Computations</h3>
 <p>Ideally, we draft code in the source pane inside an R script (i.e.&nbsp;the Untitled file) and we click Run (<code>ctrl+enter</code>) to execute it. The result will appear in the console. While the console can also do this, it often leads to problematic situations as soon as we write multiple lines of code.</p>
 <p><img src="images/clipboard-103972812.png" class="img-fluid"></p>
 <p>It is good practice that coding is all done in a script, rather than the directly in the console. Describing the contents or practically leaving comments in a lengthy code is also an advantage of using a script versus the console. Comments in the script can be made by putting a pound sign (<code>#</code>) before the line – it does not matter how many, as long as there is at least one, it will turn that line into a comment. This improves overall coding documentation as we learn more concepts that require certain packages and functions.</p>
 <p><img src="images/clipboard-3584689158.png" class="img-fluid"></p>
 <p>A common data structure that can be created in R is a vector – a one dimensional collection of values stored in a single object. The concatenate function, <code>c()</code>, creates vectors and doing so requires that the elements inside it are separated by commas. In the example below, they were stored in the environment as an object named <code>scores</code>. Now every time we type scores or call out scores in a function, it will use that particular vector we saved. Of the many built in R functions, <code>mean()</code> is one of them, which in this case was used to obtain the average of their scores.</p>
 <p><img src="images/clipboard-213827724.png" class="img-fluid"></p>
+<p>For demonstration purposes (and as noted earlier), codes can be typed in and executed in the console after hitting enter, but what happened in the scenario below?</p>
+<p><img src="images/clipboard-90621387.png" class="img-fluid"></p>
+<p>Yep, you guessed it right! R is case-sensitive, if we wish to call out <code>scores</code> we must type it as how it is spelled. Object names SHOULD always start with a letter and MUST NEVER have a space. Special characters we can use are underscore (<code>_</code>) and period (<code>.</code>).</p>
+<!-- <a href="https://www.google.com/search?q=quarto+square+bullets" target="_blank" rel="noopener"> -->
+<!-- Open Google search for Quarto square bullets -->
+<!-- </a> -->
+</section>
+<section id="packages" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="packages">Packages</h3>
+<p>The limitations of R’s default installation are the primary reason packages exist. R packages are collections of functions, datasets, and documentation that extend R’s capabilities by providing additional tools and functionality. Packages are installed from repositories such as <a href="https://cran.r-project.org/">CRAN</a> using the <code>install.packages()</code> function or through RStudio’s interface via <em>Tools → Install Packages</em>. Once installed, packages are stored in a library (a directory containing one or more packages) and can be loaded into an R session using the <code>library()</code> function.</p>
+<p>For guidance, we will demonstrate the uses of a package by following a series of steps.</p>
+<section id="step-1-new-script" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="step-1-new-script">Step 1: New Script</h4>
+<p>On RStudio, create a new script (<code>CONTROL+SHIFT+N</code>).</p>
+</section>
+<section id="step-2-install-and-load-a-package" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="step-2-install-and-load-a-package">Step 2: Install and Load a Package</h4>
+<p>I am a strong advocate of the capabilities of the <a href="https://tidyverse.org/"><code>tidyverse</code> package</a>. The syntax involved in writing code blocks in this package appears more intuitive than that of the default.</p>
+<p>On your new script, type this down</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and press the Run button (<code>CONTROL+ENTER</code>). After that, type this in the next line</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and run it as well. Some of you might see a bunch of messages, usually stating some conflict and such, just go ahead and ignore that. For some, you might just be lucky and not see any of those messages and see that the console is ready again to execute new code.</p>
+</section>
+<section id="step-3-compare-base-r-and-the-tidyverse" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="step-3-compare-base-r-and-the-tidyverse">Step 3: Compare base R and the tidyverse</h4>
+<p>Let’s do a mini analysis!</p>
+<p>At <strong>PuthPaws Support Operations</strong>, the customer experience team records the <strong>handling time (in minutes)</strong> for a sample of individual customer support tickets received over a short monitoring period.</p>
+<p>The values below represent the time required to resolve seven randomly selected tickets (copy the vector below on your script then run it, so it saves in your environment):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>handling <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">14</span>, <span class="dv">16</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Each value corresponds to a <strong>single customer support interaction</strong>, measured from ticket creation to resolution.</p>
+<section id="what-is-the-typical-handling-time" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="what-is-the-typical-handling-time">What is the typical handling time?</h5>
+<p>This pertains to the typical value of a dataset. One way to quantify the typical value is to calculate the mean (or average). In the demonstration earlier, we have already shown that R has a bulit-in function <code>mean</code> that calculates the average for us.</p>
+<p>We can solve for the typical handling time by putting the vector <code>handling</code> inside the <code>mean</code> function and running the code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(handling)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And we should get this result in the console</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">14.85714</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>That is pretty straightforward but may get clunky as we stack multiple operators and functions.</p>
+<p>Another method is by using the pipe operator (<code>%&gt;%</code>), which becomes available whenever we load the <code>tidyverse</code> package. It allows us to chain multiple lines of code.</p>
+<p>As an analog to the computation above, this is how it is done with the pipe operator:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>handling <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">mean</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And it should get you the same result. Why do that? Well, it is more intuitive. We can choose to make the output tidier by rounding. If we use the first convention, wrap the <code>round</code> function around the <code>mean</code> function like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">mean</span>(handling), <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>round</code> function there takes in two inputs – the number we are rounding and the number of decimal places we are rounding to (in this case, 1). Imagine how this might become more difficult to understand when we wish to use more functions… but with the pipe operator, all we have to do is pipe the next function to the previous (in a logical way) to get to our desired result:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>handling <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">mean</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">round</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Running that yields</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">14.9</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>While the pipe operator has three symbols, there is no need to worry about pressing way too many keys to encode it because there is a shortcut: <code>CONTROL+SHIFT+M</code> – the keystrokes you will remember and appreciate for the entirety of this textbook.</p>
+</section>
+</section>
+<section id="step-4-saving-a-script" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="step-4-saving-a-script">Step 4: Saving a Script</h4>
+<p>Save your script by going to File then clicking Save (it is a .R file), and save it in wherever folder you know you can easily find on your messy laptop.</p>
+</section>
 </section>
 </section>
 <section id="data" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="data"><span class="header-section-number">1.2</span> Data</h2>
-<section id="components-of-a-dataset" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="components-of-a-dataset"><span class="header-section-number">1.2.1</span> Components of a Dataset</h3>
+<section id="components-of-a-dataset" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="components-of-a-dataset">Components of a Dataset</h3>
 </section>
-<section id="population-vs.-sample" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="population-vs.-sample"><span class="header-section-number">1.2.2</span> Population vs.&nbsp;Sample</h3>
+<section id="population-vs.-sample" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="population-vs.-sample">Population vs.&nbsp;Sample</h3>
 </section>
-<section id="unit-of-analysis" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="unit-of-analysis"><span class="header-section-number">1.2.3</span> Unit of Analysis</h3>
+<section id="unit-of-analysis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="unit-of-analysis">Unit of Analysis</h3>
 <style>
 
 main {

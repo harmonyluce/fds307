@@ -13,19 +13,37 @@ book:
     - index.qmd
     - rstudio_and_data.qmd
     - probability.qmd
-    - summary.qmd
+    - comprequiz.qmd
   
 format:
   html:
     theme: 
       light: zephyr
-      dark: vapor
+      dark: morph
     toc: true
+    include-in-header:
+      text: |
+        <style>
+        #quarto-sidebar .menu-text {
+          display: flex;
+        }
+        #quarto-sidebar .chapter-number {
+          display: block;
+          width: 1em;
+          text-align: left;
+        }
+        #quarto-sidebar .chapter-title {
+          display: block;
+          padding-left: 10px;
+          text-indent: -10px;
+          width: 100%;
+        }
+        </style>
     highlight-style: styles/joyce.theme
-    css: styles/styles.css
-    include-after-body:
-      - scripts/quiz.js
-    callout-icon: false
+    # css: styles/styles.css
+    # include-after-body:
+    #   - scripts/quiz.js
+    # callout-icon: false
     
 # [default, styles/edav3.scss]
 # bibliography: references.bib    
