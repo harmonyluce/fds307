@@ -1,0 +1,226 @@
+/* ==========================================================
+PuthPaws Dark Mode Styling
+Designed for Quarto + Darkly/Slate themes
+Charlie-Approved Edition 🐾🎹
+========================================================== */
+
+/* ==========================================================
+GLOBAL
+========================================================== */
+
+.quarto-dark {
+scroll-behavior: smooth;
+}
+
+/* ==========================================================
+GLOWING CODE BLOCKS
+========================================================== */
+
+.quarto-dark pre.sourceCode {
+background-color: #1f2329 !important;
+
+border: 1px solid #4a5568;
+border-radius: 10px;
+
+padding: 1rem;
+
+box-shadow:
+0 0 8px rgba(88, 166, 255, 0.20),
+0 0 18px rgba(88, 166, 255, 0.10);
+
+transition: all 0.3s ease;
+}
+
+.quarto-dark pre.sourceCode:hover {
+box-shadow:
+0 0 12px rgba(88, 166, 255, 0.30),
+0 0 24px rgba(88, 166, 255, 0.15);
+}
+
+.quarto-dark pre.sourceCode code {
+color: #e6edf3;
+font-size: 0.95rem;
+}
+
+/* ==========================================================
+INLINE CODE
+========================================================== */
+
+.quarto-dark code:not(pre code) {
+background-color: #2d333b;
+color: #79c0ff;
+
+padding: 0.15em 0.4em;
+
+border-radius: 5px;
+border: 1px solid #3d444d;
+}
+
+/* ==========================================================
+CODE FILENAMES
+========================================================== */
+
+.quarto-dark .code-with-filename .code-with-filename-file {
+background-color: #2d333b;
+color: #79c0ff;
+
+border: 1px solid #4a5568;
+border-bottom: none;
+
+border-radius: 10px 10px 0 0;
+}
+
+/* ==========================================================
+QUIZ CONTAINER
+========================================================== */
+
+.quarto-dark #quiz {
+color: #e6edf3;
+}
+
+/* ==========================================================
+QUESTION CARD
+========================================================== */
+
+.quarto-dark .question {
+
+background-color: #1f2329;
+
+border: 1px solid #4a5568;
+border-radius: 12px;
+
+padding: 1.2rem;
+margin-bottom: 1rem;
+
+box-shadow:
+0 0 8px rgba(88, 166, 255, 0.15),
+0 0 16px rgba(88, 166, 255, 0.08);
+}
+
+/* ==========================================================
+QUESTION NUMBER
+========================================================== */
+
+.quarto-dark .quiz-meta {
+
+color: #79c0ff;
+
+font-weight: 700;
+
+border-bottom: 2px solid #4a5568;
+
+padding-bottom: 0.5rem;
+margin-bottom: 1rem;
+}
+
+/* ==========================================================
+QUIZ TEXT
+========================================================== */
+
+.quarto-dark .question p,
+.quarto-dark .question li,
+.quarto-dark .question label,
+.quarto-dark .question ol,
+.quarto-dark .question ul {
+
+color: #e6edf3;
+}
+
+/* ==========================================================
+DROPDOWNS
+========================================================== */
+
+.quarto-dark select {
+
+background-color: #2d333b;
+
+color: #e6edf3;
+
+border: 1px solid #4a5568;
+border-radius: 6px;
+
+padding: 0.25rem 0.5rem;
+}
+
+/* ==========================================================
+RADIO BUTTONS
+========================================================== */
+
+.quarto-dark input[type="radio"] {
+accent-color: #79c0ff;
+}
+
+/* ==========================================================
+CONTROLS
+========================================================== */
+
+.quarto-dark #controls {
+
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+/* ==========================================================
+BUTTONS
+========================================================== */
+
+.quarto-dark #controls button {
+
+background-color: #2d333b;
+
+color: #e6edf3;
+
+border: 1px solid #4a5568;
+border-radius: 8px;
+
+padding: 0.6rem 1rem;
+
+transition: all 0.25s ease;
+
+box-shadow:
+0 0 6px rgba(88, 166, 255, 0.15);
+}
+
+.quarto-dark #controls button:hover {
+
+background-color: #3d444d;
+
+transform: translateY(-1px);
+
+box-shadow:
+0 0 10px rgba(88, 166, 255, 0.25);
+}
+
+/* ==========================================================
+SCORE DISPLAY
+========================================================== */
+
+.quarto-dark #result {
+
+margin-top: 1rem;
+
+color: #79c0ff;
+
+font-weight: 700;
+font-size: 1.1rem;
+}
+
+/* ==========================================================
+PRE BLOCKS INSIDE QUIZZES
+========================================================== */
+
+.quarto-dark #quiz pre {
+
+background-color: #1f2329;
+
+border: 1px solid #4a5568;
+border-radius: 8px;
+
+padding: 0.8rem;
+
+color: #e6edf3;
+
+box-shadow:
+0 0 6px rgba(88, 166, 255, 0.12);
+}

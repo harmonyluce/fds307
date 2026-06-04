@@ -18,9 +18,10 @@ book:
 format:
   html:
     theme: 
-      light: zephyr
-      dark: morph
+      light: cosmo
+      dark: darkly
     toc: true
+    css: styles/styles.css
     include-in-header:
       text: |
         <style>
@@ -40,7 +41,6 @@ format:
         }
         </style>
     # highlight-style: styles/joyce.theme
-    # css: styles/styles.css
     # include-after-body:
     #   - scripts/quiz.js
     # callout-icon: false
