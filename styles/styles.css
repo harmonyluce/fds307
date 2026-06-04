@@ -1,226 +1,194 @@
 /* ==========================================================
-PuthPaws Dark Mode Styling
-Designed for Quarto + Darkly/Slate themes
-Charlie-Approved Edition 🐾🎹
-========================================================== */
+   PuthPaws Theme System (Cosmo + Darkly Fixed)
+   Charlie-approved 🐾🎹
+   ========================================================== */
+
 
 /* ==========================================================
-GLOBAL
-========================================================== */
+   GLOBAL
+   ========================================================== */
 
 .quarto-dark {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+
 
 /* ==========================================================
-GLOWING CODE BLOCKS
-========================================================== */
+   ================= DARK MODE (DARKLY) =====================
+   ========================================================== */
 
-.quarto-dark pre.sourceCode {
-background-color: #1f2329 !important;
 
-border: 1px solid #4a5568;
-border-radius: 10px;
+/* GLOWING CODE BLOCKS (R CHUNKS ETC.) */
+.quarto-dark pre.sourceCode,
+.quarto-dark div.sourceCode pre,
+.quarto-dark pre {
+  background-color: #1f2329 !important;
 
-padding: 1rem;
+  border: 1px solid #4a5568 !important;
+  border-radius: 10px;
 
-box-shadow:
-0 0 8px rgba(88, 166, 255, 0.20),
-0 0 18px rgba(88, 166, 255, 0.10);
+  padding: 1rem;
 
-transition: all 0.3s ease;
+  box-shadow:
+    0 0 8px rgba(88, 166, 255, 0.20),
+    0 0 18px rgba(88, 166, 255, 0.10);
+
+  transition: all 0.3s ease;
 }
 
-.quarto-dark pre.sourceCode:hover {
-box-shadow:
-0 0 12px rgba(88, 166, 255, 0.30),
-0 0 24px rgba(88, 166, 255, 0.15);
+.quarto-dark pre.sourceCode:hover,
+.quarto-dark div.sourceCode pre:hover {
+  box-shadow:
+    0 0 12px rgba(88, 166, 255, 0.30),
+    0 0 24px rgba(88, 166, 255, 0.15);
 }
 
 .quarto-dark pre.sourceCode code {
-color: #e6edf3;
-font-size: 0.95rem;
+  color: #e6edf3;
+  font-size: 0.95rem;
 }
 
-/* ==========================================================
-INLINE CODE
-========================================================== */
 
+/* INLINE CODE */
 .quarto-dark code:not(pre code) {
-background-color: #2d333b;
-color: #79c0ff;
+  background-color: #2d333b;
+  color: #79c0ff;
 
-padding: 0.15em 0.4em;
+  padding: 0.15em 0.4em;
 
-border-radius: 5px;
-border: 1px solid #3d444d;
+  border-radius: 5px;
+  border: 1px solid #3d444d;
 }
 
-/* ==========================================================
-CODE FILENAMES
-========================================================== */
 
-.quarto-dark .code-with-filename .code-with-filename-file {
-background-color: #2d333b;
-color: #79c0ff;
-
-border: 1px solid #4a5568;
-border-bottom: none;
-
-border-radius: 10px 10px 0 0;
-}
-
-/* ==========================================================
-QUIZ CONTAINER
-========================================================== */
-
+/* QUIZ CONTAINER */
 .quarto-dark #quiz {
-color: #e6edf3;
+  color: #e6edf3;
 }
 
-/* ==========================================================
-QUESTION CARD
-========================================================== */
 
+/* QUESTION CARD */
 .quarto-dark .question {
+  background-color: #1f2329;
 
-background-color: #1f2329;
+  border: 1px solid #4a5568;
+  border-radius: 12px;
 
-border: 1px solid #4a5568;
-border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
 
-padding: 1.2rem;
-margin-bottom: 1rem;
-
-box-shadow:
-0 0 8px rgba(88, 166, 255, 0.15),
-0 0 16px rgba(88, 166, 255, 0.08);
+  box-shadow:
+    0 0 8px rgba(88, 166, 255, 0.15),
+    0 0 16px rgba(88, 166, 255, 0.08);
 }
 
-/* ==========================================================
-QUESTION NUMBER
-========================================================== */
 
+/* QUESTION META */
 .quarto-dark .quiz-meta {
+  color: #79c0ff;
 
-color: #79c0ff;
+  font-weight: 700;
 
-font-weight: 700;
+  border-bottom: 2px solid #4a5568;
 
-border-bottom: 2px solid #4a5568;
-
-padding-bottom: 0.5rem;
-margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* ==========================================================
-QUIZ TEXT
-========================================================== */
 
+/* QUIZ TEXT */
 .quarto-dark .question p,
 .quarto-dark .question li,
 .quarto-dark .question label,
 .quarto-dark .question ol,
 .quarto-dark .question ul {
-
-color: #e6edf3;
+  color: #e6edf3;
 }
 
-/* ==========================================================
-DROPDOWNS
-========================================================== */
 
+/* DROPDOWNS */
 .quarto-dark select {
+  background-color: #2d333b;
+  color: #e6edf3;
 
-background-color: #2d333b;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
 
-color: #e6edf3;
-
-border: 1px solid #4a5568;
-border-radius: 6px;
-
-padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
-/* ==========================================================
-RADIO BUTTONS
-========================================================== */
 
+/* RADIO BUTTONS */
 .quarto-dark input[type="radio"] {
-accent-color: #79c0ff;
+  accent-color: #79c0ff;
 }
 
-/* ==========================================================
-CONTROLS
-========================================================== */
 
+/* CONTROLS */
 .quarto-dark #controls {
-
-display: flex;
-gap: 10px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-/* ==========================================================
-BUTTONS
-========================================================== */
 
+/* BUTTONS */
 .quarto-dark #controls button {
+  background-color: #2d333b;
+  color: #e6edf3;
 
-background-color: #2d333b;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
 
-color: #e6edf3;
+  padding: 0.6rem 1rem;
 
-border: 1px solid #4a5568;
-border-radius: 8px;
+  transition: all 0.25s ease;
 
-padding: 0.6rem 1rem;
-
-transition: all 0.25s ease;
-
-box-shadow:
-0 0 6px rgba(88, 166, 255, 0.15);
+  box-shadow:
+    0 0 6px rgba(88, 166, 255, 0.15);
 }
 
 .quarto-dark #controls button:hover {
+  background-color: #3d444d;
 
-background-color: #3d444d;
+  transform: translateY(-1px);
 
-transform: translateY(-1px);
-
-box-shadow:
-0 0 10px rgba(88, 166, 255, 0.25);
+  box-shadow:
+    0 0 10px rgba(88, 166, 255, 0.25);
 }
 
-/* ==========================================================
-SCORE DISPLAY
-========================================================== */
 
+/* RESULT */
 .quarto-dark #result {
+  margin-top: 1rem;
 
-margin-top: 1rem;
+  color: #79c0ff;
 
-color: #79c0ff;
-
-font-weight: 700;
-font-size: 1.1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
+
 /* ==========================================================
-PRE BLOCKS INSIDE QUIZZES
-========================================================== */
+   ================= LIGHT MODE (COSMO) =====================
+   ========================================================== */
 
-.quarto-dark #quiz pre {
 
-background-color: #1f2329;
+/* FIX: QUIZ CODE BLOCKS (XTABS ETC.) */
+body:not(.quarto-dark) #quiz pre,
+body:not(.quarto-dark) #quiz pre.sourceCode,
+body:not(.quarto-dark) #quiz div.sourceCode pre {
+  background-color: #f6f8fa;
 
-border: 1px solid #4a5568;
-border-radius: 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
 
-padding: 0.8rem;
+  padding: 0.9rem;
 
-color: #e6edf3;
+  color: #24292f;
 
-box-shadow:
-0 0 6px rgba(88, 166, 255, 0.12);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.06);
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
