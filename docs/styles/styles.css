@@ -192,3 +192,12 @@ body:not(.quarto-dark) #quiz div.sourceCode pre {
 
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
+
+h4, .quarto-dark h4 {
+  font-weight: 700;
+}
+
+h5, .quarto-dark h5 {
+  font-weight: 700;
+  font-size: 1rem; /* optional: helps visibility */
+}

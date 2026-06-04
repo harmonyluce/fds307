@@ -281,6 +281,8 @@ select {
   <button id="reset">Reset</button>
 </div>
 
+<div id="timer">Time left: 10:00</div>
+
 <div id="result"></div>
 
 <script>
@@ -288,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const quiz = document.querySelector("#quiz");
 
-  let questions = Array.from(document.querySelectorAll("#quiz .question"));
+  let questions = [];
 
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
@@ -298,6 +300,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let current = 0;
 
+  // ======================
+  // TIMER SETUP
+  // ======================
+  let timeLeft = 60*14; // 10 minutes
+  let timerInterval;
+
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timeLeft--;
+
+      const min = Math.floor(timeLeft / 60);
+      const sec = timeLeft % 60;
+
+      document.getElementById("timer").textContent =
+        `Time left: ${min}:${sec.toString().padStart(2, "0")}`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        grade();
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+
   function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -305,37 +331,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-function show(i) {
+  function show(i) {
 
-  questions.forEach((q, idx) => {
+    questions.forEach((q, idx) => {
+      q.style.display = idx === i ? "block" : "none";
 
-    q.style.display = idx === i ? "block" : "none";
+      const oldMeta = q.querySelector(".quiz-meta");
+      if (oldMeta) oldMeta.remove();
+    });
 
-    const oldMeta = q.querySelector(".quiz-meta");
-    if (oldMeta) oldMeta.remove();
+    current = i;
 
-  });
+    const currentQuestion = questions[current];
 
-  current = i;
+    const metaDiv = document.createElement("div");
+    metaDiv.className = "quiz-meta";
+    metaDiv.textContent = `Question ${current + 1} of ${questions.length}`;
 
-  const currentQuestion = questions[current];
+    currentQuestion.prepend(metaDiv);
 
-  const metaDiv = document.createElement("div");
-  metaDiv.className = "quiz-meta";
-  metaDiv.textContent = `Question ${current + 1} of ${questions.length}`;
-
-  currentQuestion.prepend(metaDiv);
-
-  prev.style.display = current === 0 ? "none" : "inline-block";
-  next.style.display = current === questions.length - 1 ? "none" : "inline-block";
-  submit.style.display = current === questions.length - 1 ? "inline-block" : "none";
-}
+    prev.style.display = current === 0 ? "none" : "inline-block";
+    next.style.display = current === questions.length - 1 ? "none" : "inline-block";
+    submit.style.display = current === questions.length - 1 ? "inline-block" : "none";
+  }
 
   function randomize() {
 
-    // shuffle questions
-    shuffle(questions);
-    questions.forEach(q => quiz.appendChild(q));
+    const allQuestions = Array.from(document.querySelectorAll("#quiz .question"));
+
+    shuffle(allQuestions);
+
+    const selected = allQuestions.slice(0, 4);
+
+    quiz.innerHTML = "";
+    selected.forEach(q => quiz.appendChild(q));
+
+    questions = selected;
 
     // shuffle selects
     questions.forEach(q => {
@@ -350,7 +381,7 @@ function show(i) {
       });
     });
 
-    // shuffle radio labels safely
+    // shuffle radios
     questions.forEach(q => {
       const groups = {};
 
@@ -377,7 +408,6 @@ function show(i) {
       let score = 0;
 
       const selects = q.querySelectorAll("select");
-      const radios = q.querySelectorAll("input[type=radio]");
 
       if (selects.length > 0) {
         const weight = 1 / selects.length;
@@ -405,6 +435,7 @@ function show(i) {
 
   randomize();
   show(0);
+  startTimer();
 
 });
 </script>
