@@ -12,6 +12,7 @@ book:
   chapters:
     - index.qmd
     - rstudio_and_data.qmd
+    - describing_data.qmd
     - probability.qmd
     - comprequiz.qmd
   

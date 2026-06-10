@@ -218,6 +218,466 @@ xtabs(~ stray + adopted, data = shelter) %>%
 
 </div>
 
+<!-- Q8 SUGAR REFINERY (UNIFORM + BINOMIAL) -->
+<div class="question">
+
+<p>
+A regional food supply company operates three independent sugar processing plants. Due to natural variability in raw material quality and short-term operational fluctuations, the daily output of each plant is modeled as uniformly distributed between 2 and 7 tons.
+</p>
+
+<p>
+For planning and cost-control purposes, a plant is classified as <b>operationally compliant</b> on a given day if it produces more than 4 tons of sugar, which is the minimum threshold required to meet distribution commitments without incurring additional logistics costs.
+</p>
+
+<p>
+On a randomly selected day, what is the probability that <b>exactly two of the three plants are operationally compliant</b>?
+</p>
+
+<div>
+  <label><input type="radio" name="q8" data-answer="false"> 0.2880</label>
+  <label><input type="radio" name="q8" data-answer="false"> 0.3750</label>
+  <label><input type="radio" name="q8" data-answer="true"> 0.4320</label>
+  <label><input type="radio" name="q8" data-answer="false"> 0.2160</label>
+  <label><input type="radio" name="q8" data-answer="false"> 0.6480</label>
+  <label><input type="radio" name="q8" data-answer="false"> 0.5184</label>
+</div>
+
+</div>
+
+<!-- Q9 CONVEYOR ENERGY BOOTSTRAP REGRESSION -->
+<div class="question">
+
+<p>
+A large logistics company operates an automated parcel distribution center. One of its critical systems is a high-speed conveyor network whose energy consumption must be carefully managed to avoid overload during peak sorting periods.
+</p>
+
+<p>
+An analytics team fits a simple linear regression model using 60 operational snapshots, relating conveyor load intensity (measured in thousands of parcels per hour) to energy consumption (in kilowatts). Instead of reporting a single fitted equation, the team uses a bootstrap procedure with 10,000 resamples to quantify parameter stability and uncertainty.
+</p>
+
+<p>
+The resulting bootstrap-based regression summary is reported as follows:
+</p>
+
+<pre>
+Bootstrap Regression Summary (B = 10,000)
+
+term            estimate   2.5%    97.5%
+------------------------------------------------
+(Intercept)      42.6      39.8     45.3
+load              3.1       2.7      3.5
+Residual SD       6.8       6.1      7.6
+R-squared         0.74      0.69     0.79
+</pre>
+
+<p>
+Three operating configurations are then evaluated:
+</p>
+
+<ul>
+  <li>System A: load intensity = 4.0</li>
+  <li>System B: load intensity = 7.5</li>
+  <li>System C: load intensity = 11.0</li>
+</ul>
+
+<p><b>For each statement below, select TRUE or FALSE.</b></p>
+
+<ul style="padding-left: 1.2rem; list-style-type: square;">
+
+  <li>
+    The bootstrap results suggest that energy consumption increases with load intensity, and System C has the highest expected energy consumption among the three systems.
+    <select data-answer="true">
+      <option value="">---</option>
+      <option value="true">TRUE</option>
+      <option value="false">FALSE</option>
+    </select>
+  </li>
+
+  <li>
+    The confidence interval for the slope indicates that load intensity is not a statistically meaningful predictor of energy consumption.
+    <select data-answer="false">
+      <option value="">---</option>
+      <option value="true">TRUE</option>
+      <option value="false">FALSE</option>
+    </select>
+  </li>
+
+  <li>
+    The relatively high R-squared value indicates that the model explains a substantial proportion of variability in energy consumption, though non-trivial unexplained variation remains.
+    <select data-answer="true">
+      <option value="">---</option>
+      <option value="true">TRUE</option>
+      <option value="false">FALSE</option>
+    </select>
+  </li>
+
+  <li>
+    Because the intercept confidence interval is wider than the slope confidence interval, the intercept is more uncertain than the effect of load intensity.
+    <select data-answer="false">
+      <option value="">---</option>
+      <option value="true">TRUE</option>
+      <option value="false">FALSE</option>
+    </select>
+  </li>
+
+</ul>
+
+</div>
+
+<!-- Q11 VISUALIZATION DATA TYPE -->
+<div class="question">
+
+<p>
+Which of the following visualizations <b>requires a sequential explanatory variable</b> (i.e., a variable with a meaningful order such as time or progression)?
+</p>
+
+<div>
+  <label><input type="radio" name="q11" data-answer="false"> faceted scatterplots</label>
+  <label><input type="radio" name="q11" data-answer="true"> faceted line graphs</label>
+  <label><input type="radio" name="q11" data-answer="false"> filled bar plot</label>
+  <label><input type="radio" name="q11" data-answer="false"> histogram</label>
+  <label><input type="radio" name="q11" data-answer="false"> boxplot</label>
+  <label><input type="radio" name="q11" data-answer="false"> density histogram</label>
+</div>
+
+</div>
+
+<!-- Q12 HOUSEHOLD WATER CONSUMPTION (REVISED ELABORATE VERSION) -->
+<div class="question">
+
+<p>
+A municipal water authority is conducting a detailed audit of residential water usage across a small community in order to better understand consumption patterns and identify potential inefficiencies in infrastructure allocation.
+</p>
+
+<p>
+During the preliminary analysis, the data team notes that most households exhibit moderate daily water usage, while a small number of properties—specifically abandoned or unoccupied residences with disconnected service lines—report extremely low recorded consumption values, effectively approaching zero.
+</p>
+
+<p>
+To summarize the distribution, the analyst reports the following descriptive statistics:
+</p>
+
+<ul>
+  <li>Mean daily household water consumption: 75 liters</li>
+  <li>Median daily household water consumption: 82 liters</li>
+</ul>
+
+<p>
+Based on these summary measures alone, and without assuming any specific parametric form for the underlying distribution, which conclusion is most defensible?
+</p>
+
+<div>
+  <label><input type="radio" name="q12" data-answer="false">
+    At least half of all households in the community must have a daily water consumption exceeding 82 liters, with the remaining households necessarily falling at or below this threshold.
+  </label>
+
+  <label><input type="radio" name="q12" data-answer="false">
+    The distribution is likely characterized by a greater concentration of households below 75 liters than above 75 liters, implying a majority of low-consumption households.
+  </label>
+
+  <label><input type="radio" name="q12" data-answer="true">
+    The observed relationship between the mean and median is more consistent with a distribution exhibiting left skewness than right skewness, suggesting the presence of a small number of unusually low values pulling the mean downward.
+  </label>
+
+  <label><input type="radio" name="q12" data-answer="false">
+    The distribution is more plausibly right-skewed than left-skewed, indicating that a minority of households with exceptionally high consumption are likely inflating the mean.
+  </label>
+
+  <label><input type="radio" name="q12" data-answer="false">
+    At least one household must have a recorded consumption value exactly equal to 82 liters per day, since the median corresponds to an observed data point in the dataset.
+  </label>
+
+  <label><input type="radio" name="q12" data-answer="false">
+    The interquartile range of the distribution must exceed 7 liters per day, given the observed separation between the mean and median.
+  </label>
+</div>
+
+</div>
+
+<!-- Q13 FUNDAMENTAL PLOTS (UNIFIED STORY, HARD) -->
+<div class="question">
+
+<p>
+A national public infrastructure agency is conducting a comprehensive review of commuter behavior and service performance across a newly modernized rail network. The dataset contains multiple layers of information collected over one operational year, including passenger counts, delays, station-level usage patterns, and relationships between environmental and operational variables.
+</p>
+
+<p>
+A team of analysts is tasked with producing a set of exploratory visualizations for a technical report. Each visualization must be chosen carefully to match the statistical structure of the question being asked, not merely the appearance of the data.
+</p>
+
+<p><b>For each analytical objective below, select the most appropriate visualization type.</b></p>
+
+<ul style="padding-left: 1.2rem; list-style-type: square;">
+
+  <li>
+    The operations unit wants to understand how total passenger volume at a major central station evolves over time across the entire year. The emphasis is on identifying gradual trends, seasonal cycles, and persistent upward or downward movements in demand, with the requirement that continuity between consecutive time points must be visually preserved.
+    <select data-answer="line">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet">faceted plot</option>
+    </select>
+  </li>
+
+  <li>
+    A performance audit team wishes to examine the distribution of train delay durations (in minutes) across all trips in the network. Their focus is not on time ordering or grouping, but rather on the shape of the distribution, including skewness, concentration, and the presence of extreme delays.
+    <select data-answer="hist">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet">faceted plot</option>
+    </select>
+  </li>
+
+  <li>
+    The regional planning division aims to compare passenger load variability across different station types (e.g., interchange hubs, suburban stops, and terminal stations). The objective is to compare distributions of a continuous variable across multiple categorical groups, emphasizing medians, spread, and potential outliers rather than individual observations.
+    <select data-answer="box">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet">faceted plot</option>
+    </select>
+  </li>
+
+  <li>
+    A systems analyst investigates whether train delays are associated with passenger volume, suspecting that this relationship may differ depending on whether the station is located in an urban core, suburban zone, or rural area. The goal is to visualize a bivariate relationship while preserving interpretability across groups by separating the display into comparable panels.
+    <select data-answer="facet">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet">faceted plot</option>
+    </select>
+  </li>
+
+</ul>
+
+</div>
+
+<!-- Q14 FUNDAMENTAL PLOTS (FINAL, HARD, INLINE DROPDROPDOWN, UNIFIED STORY) -->
+<div class="question">
+
+<p>
+A national transportation analytics division is preparing an internal technical report on passenger behavior and system performance across a newly expanded rail network. The dataset includes hourly passenger counts, delay durations, station classifications, and relationships between operational load and service efficiency.
+</p>
+
+<p>
+Analysts are instructed to choose visualization types that match the statistical objective of each task, with emphasis on whether the goal is to examine distributions, compare groups, or explore relationships between variables.
+</p>
+
+<p><b>Complete each statement by selecting the most appropriate visualization type.</b></p>
+
+<ul style="padding-left: 1.2rem; list-style-type: square;">
+
+  <li>
+    To understand how passenger volume evolves smoothly over time at a central hub station, capturing seasonal cycles and long-term trends in demand, the analysts decide to use a
+    <select data-answer="line">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet_hist">faceted histogram</option>
+      <option value="facet_scatter">faceted scatterplot</option>
+      <option value="fill_bar">filled bar plot</option>
+    </select>
+    to preserve continuity across ordered time points.
+  </li>
+
+  <li>
+    To examine the distribution of train delay durations across all trips in the network, with particular attention to skewness, concentration, and extreme delays, without conditioning on any grouping structure, the analysts choose a
+    <select data-answer="hist">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet_hist">faceted histogram</option>
+      <option value="facet_scatter">faceted scatterplot</option>
+      <option value="fill_bar">filled bar plot</option>
+    </select>
+    to visualize the full marginal distribution of a continuous variable.
+  </li>
+
+  <li>
+    To compare passenger load variability across different station types (such as interchange hubs, suburban stations, and terminal stations), while emphasizing medians, spread, and outliers rather than individual observations, the analysts select a
+    <select data-answer="box">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet_hist">faceted histogram</option>
+      <option value="facet_scatter">faceted scatterplot</option>
+      <option value="fill_bar">filled bar plot</option>
+    </select>
+    to summarize and compare distributions across categorical groups.
+  </li>
+
+  <li>
+    To investigate whether the relationship between passenger volume and train delay differs across urban, suburban, and rural stations, the analysts construct a
+    <select data-answer="facet_scatter">
+      <option value="">---</option>
+      <option value="bar">bar plot</option>
+      <option value="box">boxplot</option>
+      <option value="hist">histogram</option>
+      <option value="line">line graph</option>
+      <option value="scatter">scatter plot</option>
+      <option value="facet_hist">faceted histogram</option>
+      <option value="facet_scatter">faceted scatterplot</option>
+      <option value="fill_bar">filled bar plot</option>
+    </select>
+    to preserve the bivariate structure while allowing comparisons across station categories.
+  </li>
+
+</ul>
+
+</div>
+
+<!-- Q15 Z-score -->
+<div class="question">
+
+<p>
+A national railway authority operates two independent monitoring systems that track structural vibration along railway bridges in different regions of the country. Because each region has different engineering characteristics and environmental conditions, each system is evaluated relative to its own historical pattern of readings.
+</p>
+
+<p>
+In Region A, vibration readings typically have a mean level of 40 with a standard deviation of 8, while in Region B they typically have a mean level of 100 with a standard deviation of 20.
+</p>
+
+<p>
+During a routine inspection, the systems report unusually high readings of 56 in Region A and 132 in Region B.
+</p>
+
+<p>
+An engineer is asked to determine which region is currently experiencing a more unusually high vibration level relative to its own historical pattern.
+</p>
+
+<p>
+Which conclusion is most justified?
+</p>
+
+<div>
+  <label><input type="radio" name="q" data-answer="false"> Region B is more unusual because its reading is larger in absolute terms.</label>
+  <label><input type="radio" name="q" data-answer="false"> Region A is more unusual because its reading is farther above its mean in raw units.</label>
+  <label><input type="radio" name="q" data-answer="false"> Both regions are equally unusual because both readings are equally above their means.</label>
+  <label><input type="radio" name="q" data-answer="false"> Region B is less unusual because larger variability makes deviations less meaningful.</label>
+  <label><input type="radio" name="q" data-answer="false"> The two regions cannot be compared because they use different measurement systems.</label>
+  <label><input type="radio" name="q" data-answer="true"> Region A is more unusual because its deviation from the mean is larger relative to its standard deviation.</label>
+</div>
+
+</div>
+
+<!-- Q16 GROUPED STATISTICS (WITH n + 6 BULLETS STRUCTURE) -->
+<div class="question">
+
+<p>
+A national courier company is evaluating four sorting facilities based on daily processing efficiency scores recorded over a fixed operational period.
+Each facility has the same number of observed days.
+</p>
+
+<p>
+The operations team summarizes the data using standard descriptive statistics.
+</p>
+
+<p><b>R Output:</b></p>
+
+<pre style="background:#f6f6f6; padding:12px; font-family: monospace; overflow-x:auto;">
+
+Facility                     n    Min   Q1   Median   Q3   Max   Mean   SD
+---------------------------------------------------------------------------
+Northgate Sorting Hub        20   62    70     75     80    95    76     6
+Eastline Distribution Center 20   68    72     74     76    78    74     2
+Southport Logistics Yard     20   55    65     78     82    98    75     12
+Westbridge Fulfillment Unit  20   70    73     74     75    77    74     1.5
+</pre>
+
+<ul style="padding-left: 1.2rem; list-style-type: square;">
+
+  <li>
+    Southport Logistics Yard has the highest variability when measured using:
+    <select data-answer="both">
+      <option value="">---</option>
+      <option value="sd">SD</option>
+      <option value="iqr">IQR</option>
+      <option value="both">Both SD and IQR</option>
+      <option value="neither">Neither SD nor IQR</option>
+    </select>
+  </li>
+
+  <li>
+    Eastline Distribution Center is best described as:
+    <select data-answer="low and stable">
+      <option value="">---</option>
+      <option value="high and unstable">High and unstable</option>
+      <option value="moderate and variable">Moderate and variable</option>
+      <option value="low and stable">Low and stable</option>
+      <option value="outlier driven">Outlier driven</option>
+    </select>
+  </li>
+
+  <li>
+    Northgate Sorting Hub has approximately how many observations between Q1 and Q3:
+    <select data-answer="10">
+      <option value="">---</option>
+      <option value="5">5</option>
+      <option value="8">8</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+  </li>
+
+  <li>
+    Southport Logistics Yard has approximately how many observations above Q3:
+    <select data-answer="5">
+      <option value="">---</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
+  </li>
+
+  <li>
+    Which facility is most influenced by extreme values when using SD:
+    <select data-answer="Southport Logistics Yard">
+      <option value="">---</option>
+      <option value="Northgate Sorting Hub">Northgate Sorting Hub</option>
+      <option value="Eastline Distribution Center">Eastline Distribution Center</option>
+      <option value="Southport Logistics Yard">Southport Logistics Yard</option>
+      <option value="Westbridge Fulfillment Unit">Westbridge Fulfillment Unit</option>
+    </select>
+  </li>
+
+  <li>
+    Which facility shows the most consistent performance across both SD and IQR:
+    <select data-answer="Westbridge Fulfillment Unit">
+      <option value="">---</option>
+      <option value="Northgate Sorting Hub">Northgate Sorting Hub</option>
+      <option value="Eastline Distribution Center">Eastline Distribution Center</option>
+      <option value="Southport Logistics Yard">Southport Logistics Yard</option>
+      <option value="Westbridge Fulfillment Unit">Westbridge Fulfillment Unit</option>
+    </select>
+  </li>
+
+</ul>
+
+</div>
+
 </div>
 
 <!-- =========================
