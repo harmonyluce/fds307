@@ -14,7 +14,7 @@ book:
     - rstudio_and_data.qmd
     - describing_data.qmd
     - probability.qmd
-    - comprequiz.qmd
+    - comprequiz.qmd 
   
 format:
   html:
